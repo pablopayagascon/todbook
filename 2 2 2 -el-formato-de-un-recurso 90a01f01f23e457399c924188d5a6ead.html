@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>2.2.2.-el-formato-de-un-recurso</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="90a01f01-f23e-4573-99c9-24188d5a6ead" class="page sans"><header><h1 class="page-title">2.2.2.-el-formato-de-un-recurso</h1><p class="page-description"></p></header><div class="page-body"><h1 id="defd0843-68ee-4b85-bd16-2330fb7cdc31" class="">2.2.2. El formato de un recurso</h1><p id="5dc51a3c-4881-4ed2-8e8d-fe7bb4b1fed3" class="">Los recursos de información pueden existir en numerosos formatos, partiendo desde la más básica distinción entre los físicos y los digitales. Esta distinción es muy importante en la implementación de un sistema de almacenamiento o preservación de recursos porque es ahí donde, por lo general, las propiedades físicas tienen que ser tenidas en consideración y muchas veces suponen restricciones. Esta distinción es menos importante a nivel lógico cuando diseñamos interacciones con recursos porque los sustitutos digitales de los recursos físicos pueden superar las limitaciones que plantean sus propiedades físicas. Cuando buscamos coches o electrodomésticos en una tienda en línea no importa dónde se encuentran los coches o electrodomésticos reales o cómo están organizados. <a href="https://www.notion.so../../capitulo-i.-sistemas-de-organizacion-marco-de-referencia/1.6-el-concepto-de-principio-de-organizacion.md#los-tres-niveles-de-sistemas-de-organizacion">(Ver el recuadro “Los tres niveles de los Sistemas de Organización” del capítulo 1).</a></p><p id="cc5acbdb-d663-4d98-900b-bebf950736db" class="">Muchas representaciones digitales pueden asociarse con recursos físicos o digitales, pero es importante saber cuál es el recurso original o primario, especialmente para aquellos únicos o valiosos.</p><p id="d00a7ab9-43c0-4d96-8940-d859cdd9325d" class="">Hoy en día muchos recursos sobre los que aplicamos Sistemas de Organización se crean nativamente de forma digital, creados en procesadores de texto, cámaras digitales, grabadoras de audio y vídeo. Otros recursos son elaborados por sensores de dispositivos “inteligentes” y por otros sistemas que crean recursos digitales cuando interactúan con códigos de barras, códigos QR, etiquetas RFID u otros mecanismos para rastrear la identidad y la ubicación.</p><p id="2a34d0f3-9ff0-4032-b139-16657051fe48" class="">Otros recursos digitales son creados por digitalización, el proceso de transformación de un artefacto cuyo formato original es físico para que pueda ser almacenado y manipulado por un ordenador. Digitalizamos las palabras impresas, las fotografías, los planos y los álbumes de fotos. El texto impreso, por ejemplo, puede digitalizarse escaneando las páginas y utilizando programas de reconocimiento de caracteres o simplemente volviéndolo a escribir.</p><p id="82b2e0a6-1fee-4871-810d-37e54e201011" class="">Hay un gran número de formatos digitales que difieren en muchos aspectos, pero simplificando podemos diferenciarlos aplicando dos dimensiones: <strong>el grado en que distinguen el contenido de la información de su presentación o representación, y el nivel de explicitación con que se representan las distinciones de contenido.</strong> En conjunto, estas dos dimensiones nos permiten comparar los formatos según su digamos “Coeficiente de inteligencia en información” global, siendo uno de sus principios genéricos que los formatos “más inteligentes” contienen más información procesable por ordenador, como se ilustra en la imagen 2.3.</p><p id="06e9b05a-720d-424c-ad75-a646a338f90d" class="">Los formatos digitales simples para documentos de “texto simple” contienen sólo los caracteres que se ven en el teclado del ordenador. El ASCII es el formato simple más utilizado, pero es inadecuado para la mayoría de los idiomas, que tienen conjuntos de caracteres más amplios, y tampoco puede manejar caracteres matemáticos.</p><figure id="bb8d76ea-7d55-4eb8-89ea-40a539909994"><div class="source"><a href="2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/d7ae9ef1-821b-4238-bab7-caf3a607610e/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><figure id="90e8562b-2ebb-4cc8-9ede-3744894d5c5d"><div class="source"><a href="2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead/Universidad-de-Murcia-main.gitbookassetsAjustes%201.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/0513a554-d888-48e1-8f18-0b382b4c8c95/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><p id="cc930f79-d5bd-47f0-a0f0-d3bc81c8754d" class="">La mayoría de los formatos de documentos también codifican explícitamente una jerarquía de componentes estructurales, como capítulos, secciones o componentes semánticos como descripciones o pasos de un procedimiento, y a veces el aspecto de la forma “renderizada” o impresa. Otra distinción importante que hay que tener en cuenta es si la información se codifica como una secuencia de caracteres de texto, de manera que sea legible tanto para el ser humano como para el ordenador. La codificación del contenido de los caracteres con XML, por ejemplo, permite la estratificación de la codificación intencional o el marcado entrelazado con el contenido de “texto simple”. Dado que los procesadores XML deben ser compatibles con Unicode, cualquier carácter puede aparecer en un documento XML. Los formatos digitales más complejos son los de los recursos multimedia y los datos multidimensionales, en los que el formato de datos está altamente optimizado para análisis o aplicaciones especializadas.</p><p id="7ee5fb92-d0a1-4260-8014-165b2d34c79c" class="">La digitalización de recursos no textuales como negativos fotográficos, dibujos y grabaciones analógicas visuales y de audio plantea un complicado conjunto de opciones sobre la densidad de píxeles, la profundidad de color, la tasa de muestreo, el filtrado de frecuencias, la compresión y otras muchas cuestiones técnicas que determinan la representación digital.</p><p id="42751666-f3c5-4706-9fd9-55e931b32feb" class="">Puede haber múltiples usos y dispositivos previstos para un recurso digitalizado que podrían requerir diferentes enfoques y formatos de digitalización. Los usuarios intermedios de los recursos digitalizados necesitan conocer el formato en el que se ha creado un artefacto digital, para poder reutilizarlo tal como está o procesarlo de otras formas.</p><p id="3231a600-e7e2-4cbd-8b20-4f1f5857a8fe" class="">Algunos formatos digitales admiten interacciones cualitativamente diferentes y más potentes que las posibles con los recursos físicos. Los museos están utilizando las tecnologías del mundo de la realidad virtual para crear exposiciones interactivas en las que los visitantes pueden volar a través del sistema solar, escanear sus propios cuerpos y modificar la gravedad para que puedan, por ejemplo, rebotar contra las paredes. Sofisticados formatos de documentos digitales pueden permitir la interacción con imágenes digitales o videos, gráficos en 3-D o conjuntos de datos incrustados. El “Google Art Project” contiene fotografías de altísima resolución de pinturas famosas que permiten ver detalles que son indetectables en las condiciones normales de visualización en los museos.</p><p id="07162219-7b52-4c64-ae8a-783257ee66f1" class="">No obstante, conviene recordar que las representaciones digitales de los recursos físicos también pueden perder información y capacidades importantes. Los sonidos distintivos de la música hip hop producidos al “rascar” los discos de vinilo en los tocadiscos no pueden producirse a partir de archivos de música MP3 en formato digital.</p><figure id="ea0ecc78-46aa-42e3-b3a4-c6d53c750389" class="image"><a href="https://www.notion.so../../.gitbook/assets/iconoRecurso 3puntos.jpg"><img src="https://www.notion.so../../.gitbook/assets/iconoRecurso 3puntos.jpg"/></a></figure><p id="ffc0b178-d5c1-494d-8b63-64516c3ef79e" class=""><strong>Imagen 2.3. El Coeficiente de inteligencia en información (Information IQ)</strong></p><p id="f91a42e1-7db7-40e4-bdf3-7a103fcccb82" class="">{% hint style=“info” %} #### Imagen 2.3. El Coeficiente de inteligencia en información (Information IQ)</p><figure id="2b059b6f-4c43-4fd8-8c41-243dc0b88da2"><div class="source"><a href="2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead/Universidad-de-Murcia-main.gitbookassetsAjustes%202.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/be68de30-02d7-48b1-8cf9-849232fabc5b/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><p id="a43fa762-3763-4177-b1ae-6e8fa6b1b2f2" class="">La noción de “Coeficiente de inteligencia” o CI de la información capta la idea de que los formatos de los documentos difieren en dos dimensiones: la explicitación de la representación del contenido y la separación del contenido y la presentación. Un documento escaneado es sólo una imagen de un documento con ninguna de estas distinciones, por lo que es bajo en ambas dimensiones. Una base de datos o un documento XML distingue explícitamente entre los tipos de contenido y la presentación se asigna por separado, por lo que tiene valores altos en ambas dimensiones y tiene el mayor “coeficiente intelectual” en información. Las distinciones de contenido de un documento HTML suelen ser de presentación y, por lo tanto, tiene un CI más bajo. Los formatos con alto CI de la información facilitan el procesamiento informático. {% endhint %}</p><p id="5fa0686c-5421-4368-9ef3-2fb63987f346" class="">Los derechos de autor a menudo presentan una barrera a la digitalización, tanto por los impedimentos legales a la reproducción o distribución, como porque la propia digitalización permite la aplicación del derecho de autor en un grado inviable antes de la llegada de la digitalización, eliminando algunas formas comunes de acceso e interacciones que son inherentemente posibles con los libros impresos físicos, como la capacidad de darlos o venderlos a otra persona.</p><hr id="58db269c-de55-4edf-b1d5-366278f46780"/><ol type="1" id="96b4fb25-4dd1-4baf-8c7c-43d8f541fafa" class="numbered-list" start="1"><li>Ambos formatos son tratados con más detalle en el capítulo 9 “Los formatos de los recursos descriptivos”, disponible en la edición online completa del libro “TDO core concepts edition”.<figure id="88706855-9c5e-4d2a-84e7-fe48d59eb151"><div class="source"><a href="2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead/Universidad-de-Murcia-main.gitbookassetsAjustes%203.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/7ad2659c-3262-40bc-92be-899837fdddaf/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

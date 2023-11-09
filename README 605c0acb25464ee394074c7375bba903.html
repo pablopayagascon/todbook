@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>README</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="605c0acb-2546-4ee3-9407-4c7375bba903" class="page sans"><header><h1 class="page-title">README</h1><p class="page-description"></p></header><div class="page-body"><h1 id="17e5786a-d8a3-48c6-ad96-1960542f6019" class="">TL;DR » PRESENTACIÓN DE LA EDICIÓN “LITE” EN ESPAÑOL</h1><p id="9052ed9b-9c22-413d-a18c-362696aa7790" class=""><em><strong>Organización y descripción de recursos de información digital</strong></em> es el título por el que finalmente nos hemos decidido para la traducción al español de tres de los capítulos del manual de referencia de la red internacional de iSchools <strong>The discipline of organizing</strong>, en el que se aborda el marco genérico de los sistemas de organización aplicables especialmente sobre objetos informativos digitales. Se trata de una obra que presenta de forma integrada los aspectos conceptuales que subyacen en diferentes campos –representación del conocimiento, bibliotecas, archivos, museos, publicación digital, recuperación de información, gestión de contenidos, diseño de servicios de información digitales– y que explican los fundamentos compartidos del continuo reto social de organizar información para permitir su acceso, enriquecimiento, almacenamiento y descubrimiento. La obra, coordinada por Robert J. Glushko, ha ido incorporando progresivamente los enfoques de áreas en auge, como la ciencia de datos, el posicionamiento web o la web de datos, creando un manual que propone un utillaje léxico compartido que enlaza desde ámbitos clásicos como la biblioteconomía y documentación hasta el de la gestión corporativa de activos de información, la gestión de datos públicos abiertos, pasando por las ingenierías de la información y las ciencias cognitivas.</p><p id="c5c3ccef-bc53-4d04-851b-991e3eb0c396" class=""><em><strong>The discipline of organizing</strong></em></p><figure id="3a56a4c6-0f5f-4291-9538-ffd2845f2ab4" class="image"><a href="README%20605c0acb25464ee394074c7375bba903/Universidad-de-Murcia-main.gitbookassetsimagen.png"><img src="README%20605c0acb25464ee394074c7375bba903/Universidad-de-Murcia-main.gitbookassetsimagen.png"/></a></figure><p id="c424baa3-ff6a-49ce-ba79-bb40c3b57c4b" class="">El libro que extractamos y traducimos es una obra ambiciosa. La primera edición de 2013 del libro <em><strong>The discipline of organizing</strong></em>, conocido como <strong>TDO book</strong>, fue reconocida por ASIS&amp;T (<em>Association for Information Science and Technology</em>) como el libro del año en el campo de <em>information science</em>. Ha sido reeditado en sellos editoriales de referencia en el campo de la información digital, como O’Reilly y el MIT o la Universidad de Berkeley, y va ya por su cuarta edición, en su voluntad de no perder el paso a los acelerados cambios de tendencia en organización del conocimiento y explotación de información digital. Además, está concebido de una forma atrevida: existe una versión profesional, donde cada cita se enmarca en un área (Ciencias cognitivas, informática, LIS), junto a otra edición para lectores del área de la “informática”, junto a la denominada edición core concepts, que reduce el aparato bibliográfico y busca una lectura más directa, que es la que tomamos como punto de partida en esta traducción.</p><p id="2429e812-db53-48e4-a01a-803514aa4372" class="">¿Qué es “la disciplina de la organización”? Si bien está claro el sentido del título de la obra, en su traducción hemos optado por desviarnos de la literalidad del término “disciplina”, y preferido el de “campo”, con resonancias a campo profesional, a conjunto de técnicas aplicadas sobre un mismo objeto, y frente a la ambivalencia de “organización” como entidad y como actividad, hemos preferido usar la forma verbal de “organizar”. En español podríamos explorar un título como el de “Organizar información: un campo abierto”. Dado que además esta edición representa solo unos pocos aspectos del libro completo, añadir el concepto de “descripción de recursos de información” ayuda a delimitar su alcance y, por otro lado, darle relevancia al objeto de la “información digital”, el cual nos gustaría que se leyera como “contenidos digitales”. La información digital no es una abstracción útil, necesita existir materializada en contenidos con una alta dosis de inteligencia incorporada: contenidos que expresan sus significados, relaciones y estructura de forma clara al resto de actores del medio digital. El contenido digital precisa ser “ingenierizado” con precisión para funcionar con fluidez en la red; es un contenido con una intensa carga de diseño que suponen decisiones tecnológicas dependientes del contexto, de estándares, plataformas y servicios de mediación, que lo enriquecen y multiplican sus prestaciones.</p><p id="108f366e-c231-4263-88ce-55544743e077" class="">Los autores usan el término “Sistemas de organización” como un continuo histórico y como un enfoque compartido en diferentes dominios:</p><ul id="577e0b39-7d5f-4264-a124-522c1bdf5cb4" class="bulleted-list"><li style="list-style-type:disc">“La elaboración de conceptos, métodos y tecnologías para describir y organizar los recursos ha sido una actividad humana esencial durante milenios, que ha evolucionado tanto en respuesta 9 Organización y descripción de recursos de información digital a las necesidades humanas como para permitir otras nuevas. Los Sistemas de Organización permitieron el desarrollo de la civilización, desde la agricultura y el comercio hasta el gobierno y la guerra. Hoy en día, los Sistemas de Organización están incorporados en todos los ámbitos de la actividad económica, incluida la investigación, la educación, el derecho, la medicina, los negocios, la ciencia, la memoria institucional, la memoria sociocultural, el gobierno, la rendición de cuentas, así como en los actos ordinarios de la vida cotidiana.”</li></ul><p id="27ce7cb7-437c-43a2-95bb-0159977a02c4" class="">Las diferentes formas en que la organización de información se hace presente en nuestra sociedad digitalizada tiende a hacerse invisible. La información es ubicua y va pegada a casi cualquier interacción, y, por ello, se da por descontada o se naturaliza, como si fuera un resultado espontáneo de los procesos. Millones de personas crean y navegan sitios web, hacen blogs, etiquetan, twittean y cargan y descargan contenidos de todo tipo de medios sin pensar “estoy organizando información” o “estoy recopilando datos”. En el fondo generan productos dotados de una arquitectura de la información Para los autores del libro una de las ideas centrales es que la distinción entre la organización de la información y la recuperación de la información que suele manifestarse en las disciplinas académicas y los planes de estudio es mucho menos importante de lo que era antes. El “TDO book”, por tanto</p><ul id="1790b25e-52a5-4282-9bd6-fdcad2725d37" class="bulleted-list"><li style="list-style-type:disc">“tiene pocas divisiones marcadas entre los temas de organización de la información (IO) y de recuperación en formación (IR). En cambio, explica los conceptos clave y los desafíos en el diseño y el despliegue de los sistemas de organización de manera que enfatiza continuamente las relaciones y las compensaciones entre IO e IR. El concepto de Sistema de Organización destaca las dimensiones y las decisiones de diseño que determinan colectivamente el alcance y la naturaleza de la organización de los recursos y las capacidades de los procesos que comparan, combinan, transforman e interactúan con los recursos organizados.”</li></ul><p id="032d08ce-193e-4bda-ae02-65d83814a7f9" class="">La disponibilidad en español de esta obra puede ayudar a mejorar la formación en organización de información, que es un elemento constitutivo de diversos estudios universitarios y campos de especialización académica y profesional, que proceden de tradiciones separadas. Esta traducción es parcial, puesto que se opta por abrir un camino en las abundantes lagunas en traducciones de manuales actualizados y reputados vinculados a la información digital. El libro TDO es una obra extensa – y por ello sugerente, potente e integradora – pero hemos preferido mostrar resultados tangibles en un plazo corto.</p><p id="e3b7d705-b508-41f6-82f6-0c61e7d7dcfe" class="">Hemos elegido tres capítulos que delimitan inicialmente los conceptos esenciales para entender transversalmente la disciplina de organizar cualquier tipo de recurso, construyendo una abstracción para los Sistemas de Organización que sea independiente de dominios de aplicación clásicos, en donde se proponen una serie de componentes, y en el que tienen especial importancia las actividades de descripción y representación de objetos que son, esencialmente, contenidos informativos, en donde se diferencia entre recursos primarios y recursos derivados o metadatos. La delimitación del resbaladizo concepto de recurso de información, simple, agregado, dinámico, multiforme, como objeto tangible sobre el que desarrollar las tareas de organización, ocupa otro de los capítulos que hemos recogido. La descripción de recursos pretende responder a las cuestiones complejas de identificar, denominar y enriquecer la información que hace a un recurso valioso dentro de una colección, lo conecta con otros en función de su contenido informativo y permite contextualizarlo como objeto social para la producción de valor y conocimiento.</p><p id="f7b36ef3-4263-46e4-9e26-60adb4d628ba" class="">Estos tres capítulos esperamos que sirvan de estímulo para próximas ediciones ampliadas, en la que se combinen los recursos e intereses de diferentes entidades vinculadas al sector de la información digital, los servicios de información, el patrimonio cultural y la formación especializada. La edición completa del libro, disponible en acceso abierto para su descarga completa y por capítulos en la web de la red de iSchools, se estructura en 12 capítulos, conforme al siguiente esquema:</p><h3 id="4e84e4b8-933d-4cfa-9ab0-bdfbb897955b" class="">FUNDAMENTOS DE LOS SISTEMAS DE ORGANIZACIÓN</h3><p id="591f85cb-c01e-48eb-b7d3-5d78bcf2b281" class="">Este capítulo inicial corresponde con el capítulo 1 de la traducción incluida en esta primera edición parcial en español, en el que se enmarca la actividad de organización información y se definen sus componentes esenciales.</p><h3 id="00194797-e4e9-47f9-9686-c230ec3df1e2" class="">DECISIONES DE DISEÑO EN SISTEMAS DE ORGANIZACIÓN</h3><p id="f0a4ceb4-e229-4d48-99a4-7bc5b76046af" class="">Se abordan seis cuestiones o dimensiones de amplio alcance que se entrelazan al definir un Sistema de Organización. Qué se organiza, por qué se organiza, cuánto se organiza, cuándo se organiza, cómo se organiza y dónde se organiza. Este marco para describir y comparar sistemas de organización permite entender desde patrones generales de diseño los sistemas usados en bibliotecas, archivos y museos, y generalizar, evitando así sus sesgos anclados en sus tradiciones específicas. Estos patrones pueden dar soporte a la colaboración 11 Organización y descripción de recursos de información digital interdisciplinar, facilitando que se apliquen categorías y conocimientos de campos más afines en otros más lejanos del discurso sobre organización de recursos de información.</p><h3 id="360538c0-afc8-4741-8677-1c8ef43be1b5" class="">LAS ACTIVIDADES EN LOS SISTEMAS DE ORGANIZACIÓN</h3><p id="5d905729-ee6b-4f97-bc62-aecd4ad4dc16" class="">Para tener una visión que reúna la forma en que organizamos cosas individualmente con la forma en la que lo hacemos desde bibliotecas, museos, administraciones, centros de investigación y empresas para crear Sistemas de Organización, requiere plantear unas generalizaciones de los conceptos y métodos de la organización tomados de cada uno de estos dominios. A partir de la revisión de una amplia variedad de Sistemas de Organización, se describen cuatro actividades y funciones que comparten todos ellos: seleccionar recursos, organizar recursos, diseñar interacciones y servicios basados en los recursos y mantener esos recursos a lo largo del tiempo.</p><h3 id="87d6643a-b57b-4e4b-ada2-de3818dc2852" class="">LOS RECURSOS EN LA ORGANIZACIÓN DE SISTEMAS</h3><p id="ff744f27-cf95-4972-8166-e398b27b759e" class="">Este capítulo corresponde al segundo capítulo incluido en esta traducción, y aborda la pregunta ¿Qué es lo que se organiza en un Sistema de Organización? Se desarrolla el concepto de recurso, que supone una generalización de los diferentes tipos de contenidos que pueden integrarse en un sistema, tanto si son objetos físicos como digitales, estáticos o dinámicos. Se presentan en detalle las complejidades inherentes a identificar y delimitar recursos, dado que son aspectos que influyen en la capacidad de un sistema para dar soporte adecuado a las interacciones establecidas en su diseño.</p><h3 id="6754a6e7-cb31-4fb0-b02a-c82ec885e764" class="">DESCRIPCIÓN DE RECURSOS Y METADATOS</h3><p id="bcd5ac17-4fbf-46cc-ab61-a724b40ef077" class="">Incorporado en este libro como capítulo 3, se abordan los principios por los que se organizan recursos y el tipo de interacciones que se podrán habilitar según las opciones de descripción asumidas explícitamente. El asunto central de la profundidad y extensión de la descripción se presentan en el marco de un proceso genérico para diseñar y realizar la descripción, combinando la intervención humana directa y los procesos automatizados.</p><h3 id="3f652421-569c-49dc-9080-fa8c2fc84757" class="">DESCRIPCIÓN DE RELACIONES Y ESTRUCTURAS</h3><p id="a40711f7-71ae-43dc-927a-bac394e8dcf8" class="">Un aspecto clave de la organización de colecciones de recursos es describir las relaciones que se establecen entre ellos. Se introduce un vocabulario específico para representar relaciones semánticas tanto entre recursos entre sí, como entre recursos y los conceptos y términos usados en recursos descriptivos. También se debate sobre las relaciones estructurales en los recursos compuestos de partes, y las relaciones entre recursos y los recursos que se citan y con los que se establecen enlaces hipertextuales.</p><h3 id="42273f42-1de5-46db-8c6f-27e3a2d8382e" class="">CATEGORIZACIÓN: DESCRIPCIÓN DE TIPOS Y CLASES</h3><p id="13541500-be21-4c68-836a-65f1f3fcd018" class="">Agrupaciones o conjuntos de recursos con descripciones similares o idénticas pueden tratarse como equivalentes, haciéndolos formar parte de una clase o categoría. Identificar y usar categorías es una de las actividades humanas esenciales que sucede automáticamente para las categorías perceptivas, tales como “cosas rojas” o “cosas redondas”. La categorización está profundamente integrada en el lenguaje y la cutura, y usamos categorías lingüísticas y culturales sin apenas darnos cuenta, aunque la categorización también puede ser un proceso cognitivo analítico muy profundo. En este capítulo se repasan las teorías de la categorización desde el punto de vista de cómo se usan y crean en los Sistemas de Organización.</p><h3 id="625218c5-d23c-4ff2-897d-001aad5def43" class="">CLASIFICACIÓN: ASIGNACIÓN DE RECURSOS A CATEGORÍAS</h3><p id="1f404660-be70-42c2-90cd-bf0fc70f27c5" class="">A menudo se usa indistintamente categorización y clasificación, pero no se trata de lo mismo. La clasificación la entendemos como categorización aplicada – la asignación a los recursos dentro de un sistema de categorías, llamadas clases, usando una serie predeterminada de principios. Este capítulo debate el amplio abanico de formas en que las clasificaciones se usan en Sistemas de Organización. Se tratan las clasificaciones enumerativas, facetadas, basadas en actividades y la clasificación computacional. Dado que la clasificación y la normalización están estrechamente relacionadas, también se analizan los estándares existentes y cómo se construyen como parte de los Sistemas de Organización.</p><h3 id="44a757f0-cb84-4938-bcc5-8a5cb4732754" class="">FORMATOS DE LA DESCRIPCIÓN DE RECURSOS</h3><p id="0ce4b243-6ccf-4a4f-8ab7-883348d7175e" class="">Este capítulo complementa la perspectiva conceptual y metodológica de la creación de descripciones de recursos con la perspectiva de la implementación. Se revisan varios metamodelos para estructurar las descripciones, con particular énfasis en XML, JSON y RDF. Se cierra con la comparación entre los “mundos de la descripción” – procesamiento de documentos, la web y la web semántica— en los cada uno de estos tres metamodelos encajan mejor.</p><h3 id="5f8f1abf-5caf-48d0-865d-20489a9d86df" class="">LA INTERACCIÓN CON LOS RECURSOS</h3><p id="24b59df0-ca0e-44ba-b553-b413b760f92f" class="">Cuando varios Sistemas de Organización se solapan, intersectan o combinan, bien sea temporal o permanentemente, las diferencias en la descripción de los recursos puede hacer que resulte difícil o imposible localizarlos, accederlos o se impida usarlos. En este capítulo se revisan algunos conceptos y técnicas que desde diferentes dominios se aplican cuando se interactúa con recursos en Sistemas de Organización – integración, interoperabilidad, mapeo de datos, crosswalks, mash-ups, etc. Las interacciones se caracterizan por las capas de propiedades de los recursos que usan: instancias, colecciones, derivados o propiedades combinadas desde diferentes fuentes. Se desarrolla la idea de que un continuo entre organización de información y recuperación de información, y se describen las interacciones de recuperación de información (y otras) en términos de requisitos de organización de información (es decir, descripciones).</p><h3 id="0ff800f3-ae73-414d-9b0f-00010095734f" class="">HOJA DE RUTA PARA SISTEMAS DE ORGANIZACIÓN</h3><p id="49d782ca-1307-419b-91dc-1e13912ff410" class="">En este capítulo se complementa la perspectiva descriptiva expuesta en los capítulos 2 a 10, con un enfoque más prescriptivo que analiza las opciones de diseño y decisiones entre opciones enfrentadas (tradeoffs) que deben hacerse en las diferentes fases del ciclo de vida de un Sistema de Organización. Los modelos de ciclo de vida de sistemas presentan una gran variedad, pero optaremos por un modelo género en cuatro fases que diferencia la fase de identificación del dominio y alcance, la fase de requisitos, una fase de toma de requisitos y diseño, y una fase operacional.</p><h3 id="98b15e91-7d17-42ec-9fb0-7f9620be0320" class="">ESTUDIOS DE CASO</h3><p id="e7757b37-73c4-4ab8-95ab-dc537a1483bb" class="">Este último capítulo parte del modelo presentado en el capítulo previo para orientar el análisis de estudios de caso que expanden el alcance de los Sistemas de Organización, cuando se interpretan desde los principios, pautas, términos y modelos expuestos a lo largo del libro.</p><hr id="61b70e4e-b746-4b5c-b7a0-9b47d12be322"/><p id="fc827ba0-b669-490f-b54a-d3c4a10accca" class="">Finalizamos la presentación de esta obra recordando el principio formulado por Elaine Svenonius de que <strong>“la efectividad de un sistema de acceso a la información es una función directa de la inteligencia puesta en organizarlo”</strong>. Cuando observamos desde una perspectiva amplia los fenómenos involucrados en la información en sociedad, podemos constatar que una vez que es puesto en movimiento un flujo de información, implica una importante cantidad de recursos y agentes, para su producción, para conseguir un impacto de difusión suficiente, y para mantenerse accesible a lo largo del tiempo. El ciclo de vida de la información supone también grandes ineficiencias, suplidas para ciertos usos hoy en día por monstruosos sistemas de procesamiento de contenidos a gran escala. La falta de una mejor “inteligencia incorporada”, es decir, metadatos y estructuras de información óptimas para los ecosistemas y plataformas digitales, supone un coste social, materializado en sobrecostes, escasez de acceso intelectual al contenido de recursos de información publicados, perduración de restricciones técnicas evitables, infrautilización de recursos y todo tipo de ineficiencias que sugieren la importancia de entender la organización de información como un pegamento para aportar valor tanto a la industria de los contenidos, el negocio digital, la difusión de la cultura y los recursos educativos a todos los niveles. El reto colectivo de que la información sea fuente de valor para sociedades complejas y el conocimiento un recurso distribuido con equidad y sostenibilidad afecta a muchas disciplinas académicas, perfiles profesionales tradicionales y de nuevo cuño, y actores políticos e institucionales. Tender puentes entre dominios creando un lenguaje común que permita trabajar juntos a las ingenierías tecnológicas, las ciencias métricas, las ciencias sociales y las ciencias humanas, es el objetivo de este libro cuando sea leído y puesto en práctica por aquellos actores de la sociedad de la información que están interviniendo en que todo tipo de actividades de información multipliquen sus efectos para generar conocimientos, conexiones y sentido.</p><h3 id="17092f22-1b95-48d0-bdc3-dcacf0a0d80d" class="">Febrero, 2021</h3><table id="b9f4fac9-0175-4fbf-a484-1ba95b567e4c" class="simple-table"><tbody><tr id="968f11e4-8b6a-4c2b-9ae1-cbf70a1afc56"><td id="oM{T" class=""></td><td id="L[Y[" class=""></td><td id="R;ui" class=""></td></tr><tr id="23140997-5dab-446a-b701-b66dd5e207ad"><td id="oM{T" class="">Tomás Saorín</td><td id="L[Y[" class=""><em>Grado en Gestión de información y Contenidos Digitales</em></td><td id="R;ui" class="">Universidad de Murcia</td></tr><tr id="471ce843-a4a2-4aed-a456-8403f5f89aed"><td id="oM{T" class="">Eva Méndez</td><td id="L[Y[" class=""><em>Grado en Gestión de información y Contenidos Digitales</em></td><td id="R;ui" class="">Universidad Carlos III</td></tr><tr id="f85c60b4-1c37-4c62-998d-9d87260c2dc6"><td id="oM{T" class="">Mario Pérez-Montoro</td><td id="L[Y[" class=""><em>Grado en Gestión de Información y Documentación Digital</em></td><td id="R;ui" class="">Universidad de Barcelona</td></tr></tbody></table></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1.1-organizar-una-disciplina-global</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="fdd0a1c4-b8b5-418d-84f2-43e029a2c0d3" class="page sans"><header><h1 class="page-title">1.1-organizar-una-disciplina-global</h1><p class="page-description"></p></header><div class="page-body"><h1 id="0d04c2c3-6a73-422b-b7a7-07849951200b" class="">1.1 Organizar, una disciplina global</h1><p id="ff5aef94-4c8d-4eb0-bc10-d8612d62e96c" class="">Organizar es una actividad tan común que a menudo la llevamos a cabo sin ser conscientes de ello. Organizamos zapatos en el armario, libros en las estanterías, especias en la cocina, recibos y registros en carpetas para preparar la declaración de impuestos, y personas en proyectos de negocios y equipos deportivos. Algunos tenemos trabajos que implican hacer unas tareas concretas de organización. Incluso podríamos haber recibido una formación específica para realizarlas siguiendo prácticas disciplinarias especializadas. Puede que dominemos estas tareas, pero, aun así, a menudo no nos paramos a reflexionar sobre la similitud entre las tareas de organización que hacemos nosotros mismos y las que hacen otros, o entre las que hacemos en el trabajo y las que hacemos en casa. Damos por sentados los conceptos y los métodos utilizados en el Sistema de Organización con el que más trabajamos.</p><p id="5387f32d-bf71-4487-bd33-6379f0284f07" class="">El objetivo de este libro es ayudar a los lectores a ser más conscientes de lo que significa organizar cualquier tipo de recursos y de los principios por los que estos se organizan. En concreto, este libro presenta el concepto de “Sistema de Organización”: una colección organizada de forma intencionada que se compone de recursos y de las interacciones que estos apoyan. En este libro también se analizan las decisiones de diseño que se toman en cualquier organización sistemática de recursos y los patrones de diseño para las interacciones que hacen uso de los recursos, como se muestra a continuación:</p><ul id="c873f615-e768-4000-a41b-5e0a5d72e423" class="bulleted-list"><li style="list-style-type:disc"><strong>ORGANIZAMOS COSAS FÍSICAS.</strong> Cada uno de nosotros organiza muchos tipos de cosas a lo largo de su vida: libros en estanterías; registros financieros en carpetas y archivadores; ropa en vestidores y armarios; utensilios de cocina y cubiertos en los cajones y los armarios de la cocina. Las bibliotecas públicas organizan libros impresos, periódicos, mapas, CDs, DVDs, y tal vez algunos álbumes de viejos discos de vinilo. Las bibliotecas de investigación también organizan manuscritos valiosos, panfletos, partituras y muchos otros tipos de información impresa. Los museos organizan pinturas, esculturas y otros artefactos de valor cultural, histórico o científico. Las tiendas y los proveedores organizan sus bienes para venderlos a los consumidores y a otros proveedores. Las ligas deportivas organizan a los jugadores en equipos y los equipos organizan a los jugadores por posición o rol.</li></ul><ul id="1f02c45a-4e08-4a46-b3b6-3ce1f0203a30" class="bulleted-list"><li style="list-style-type:disc"><strong>ORGANIZAMOS INFORMACIÓN SOBRE COSAS FÍSICAS.</strong> Cada uno de nosotros organiza información sobre cosas: cuando hacemos un inventario de nuestra casa para el seguro, cuando vendemos lo que ya no necesitamos en eBay, o cuando dejamos nuestra valoración de un restaurante en Yelp. Los catálogos de fichas de una biblioteca, y sus sustitutos digitales, nos dicen qué libros contiene la colección de la biblioteca y dónde encontrarlos. Los sensores y las etiquetas RFID rastrean el movimiento de los bienes (incluso de los libros de las bibliotecas) a través de cadenas de suministro, además del movimiento (o falta de él) de los coches en las autopistas.</li></ul><ul id="155864a4-8642-4f13-bfbe-5f8a2a255d7f" class="bulleted-list"><li style="list-style-type:disc"><strong>ORGANIZAMOS COSAS DIGITALES.</strong> Cada uno de nosotros organiza su información digital (correo electrónico, documentos, libros electrónicos, archivos MP3 y de vídeo, citas y contactos) en ordenadores, smartphones, lectores de libros electrónicos o “la nube”, a través de servicios de información que utilizan los protocolos de Internet. Las grandes bibliotecas de investigación organizan revistas y libros digitales, programas de ordenador, conjuntos de datos (datasets) gubernamentales y científicos, bases de datos, y muchos otros tipos de información digital. Las empresas organizan sus registros comerciales y la información de sus clientes en aplicaciones empresariales, sistemas de almacenamiento Data Warehouse y bases de datos. Los hospitales y las clínicas médicas mantienen e intercambian registros electrónicos de salud y radiografías y escaneos digitales.</li></ul><ul id="49048a3d-a32d-4cec-b60d-00f7db99037a" class="bulleted-list"><li style="list-style-type:disc"><strong>ORGANIZAMOS INFORMACIÓN SOBRE COSAS DIGITALES.</strong> Los catálogos de las bibliotecas digitales, los portales web y los sitios web de agregación organizan enlaces a otros recursos digitales. Los motores de búsqueda web utilizan el contenido y el análisis de los enlaces junto con clasificaciones de relevancia para organizar los miles de millones de páginas web y “feeds” de actualización permanente de datos, que compiten por nuestra atención. Los servicios basados en la web y otros recursos de información pueden ser interconectados y coreografiados para llevar a cabo procesos empresariales que manejan grandes cantidades de información, o agregados y analizados para predecir y personalizar servicios de información.</li></ul><p id="3bda59ef-1db4-4839-aed8-b6edf2027bc4" class="">Observemos más de cerca estos cuatro tipos o contextos de organización. Contraponemos “organizar cosas” con “organizar información”. A primera vista podría parecer que la organización de cosas físicas como libros, CDs, piezas de máquinas o utensilios de cocina tiene un carácter completamente diferente al de la organización de cosas digitales intangibles. A menudo organizamos las cosas físicas de acuerdo con su forma, tamaño, material de fabricación u otras propiedades intrínsecas y visibles: por ejemplo, podríamos organizar nuestras camisas en el armario por estilo y color, y podríamos organizar nuestra colección de música separando los viejos álbumes de vinilo de los CDs. Podríamos organizar los libros en las estanterías por su tamaño, poniendo todos los grandes y pesados libros ilustrados en el estante inferior. La organización de ropa y recursos de información en formatos tangibles que se basa en propiedades visibles no se parece mucho a la forma en que se almacenan y organizan los libros digitales en Kindle o la música digital en el reproductor de música. Organizar, almacenar y acceder a radiografías impresas en película puede parecer que tiene poco en común con estas actividades cuando la radiografía tiene formato de imagen digital.</p><p id="f90c5220-13ce-432e-ad11-650ff93b60e4" class="">No es de extrañar que la organización de cosas y la organización de información no difieran demasiado cuando la información se presenta de manera tangible. La era de la información digital ubicua de la última o de las últimas dos décadas es sólo algo puntual en el tiempo en comparación con los más de diez mil años de experiencia que tiene el ser humano con la información tallada en piedra, grabada en arcilla o impresa con tinta en papiro, pergamino o papel. Estos recursos de información tangibles han introducido profundamente la noción de la información como algo físico en la cultura, el lenguaje y las formas de diseño y organización de la información. Este enfoque hacia los recursos de información tangibles es especialmente dominante en las colecciones de libros venerados por su distintiva encuadernación, caligrafía y composición tipográfica.</p><p id="87df55c1-e688-4c5d-bf7a-dfacf46f202c" class="">Sin embargo, en otras ocasiones hay diferencias sustanciales entre la forma en que organizamos cosas y la forma en que organizamos información, incluso cuando ésta se presenta en forma física. Tendemos más a organizar nuestros “objetos de información” de acuerdo con <strong>aquello de lo que tratan</strong> y no tanto en base a sus propiedades visibles. En casa clasificamos nuestros CDs por artista o género; mantenemos los libros de cocina separados de los libros de viaje, y los libros de ficción separados de los libros de referencia. Las bibliotecas emplean esquemas de clasificación por temas que tienen unos cientos de miles de categorías distintas.</p><p id="fc00e1ae-4ce6-4811-8d2b-0f7b7dd6c46f" class="">Asimismo, a veces prestamos poca atención a las propiedades visibles de las cosas tangibles cuando las organizamos y en su lugar las ordenamos de acuerdo con sus propiedades funcionales o prácticas. Guardamos destornilladores, alicates, martillos, sierras, taladros y niveles en una caja de herramientas o juntos en un banco de trabajo, a pesar de que tienen pocas propiedades visuales en común. No los organizamos por lo que vemos en ellos, sino <strong>por lo que sabemos acerca de su uso</strong>. La organización de las herramientas basada en las tareas para las que sirven tiene cierta similitud con la basada en temas o la organización de una biblioteca.</p><p id="3aeb753e-01b8-4bf8-8855-dbb67d07bbfc" class="">También diferenciamos entre “organizar cosas” y “organizar información sobre cosas”. Esta diferencia parece clara si consideramos el catálogo tradicional de la biblioteca, cuyas tarjetas impresas describen los libros en las estanterías. Cuando las cosas y la información sobre ellas están ambas en formato físico, es fácil ver que la primera es un recurso primario y la segunda un recurso sustituto o asociado que lo describe o se relaciona con él.</p><h3 id="1e6c78de-6b8c-4672-a20e-694b3971144d" class="">¿QUÉ ES LA INFORMACIÓN?</h3><blockquote id="a162755b-bf37-4b57-afed-be5f6ad66a23" class="">La mayoría de los cientos de definiciones de información la tratan como una idea que da vueltas alrededor de términos igualmente difíciles de definir, como “dato”, “conocimiento” y “comunicación”. Además, estas perspectivas intelectuales e ideológicas sobre la información coexisten con el más mundano uso del término, como cuando preguntamos en la estación “¿Me podría facilitar información sobre el horario de trenes?”.<p id="5412922b-4b56-4422-80fb-7eb1400bcf09" class="">Un punto de vista abstracto de la información como algo intangible está en los fundamentos intelectuales tanto de la moderna ciencia de la información como de la economía y sociedad de la información. Sin embargo, la perspectiva abstracta a menudo entra en conflicto con la mucho más antigua idea de la información como algo tangible que de forma natural aflora cuando la información se codifica inextricablemente en formatos físicos. A menudo mezclamos confusamente la “información como contenido” con el sentido de “información como contenedor” y también, con demasiada facilidad, tratamos la cantidad de bits almacenados en la memoria de en un ordenador o en la nube como una medida de contenido o valor.</p></blockquote><figure id="ff2d1be9-dad4-4148-a21e-776ccc0079f7" class="image"><a href="https://www.notion.so../.gitbook/assets/PCcafe.jpg"><img style="width:375px" src="https://www.notion.so../.gitbook/assets/PCcafe.jpg"/></a></figure><p id="ae7ee4ff-f8ef-46d5-81d8-8cf430d460f3" class="">Cuando se trata de “organizar información sobre cosas digitales” el contraste es mucho menos claro. Cuando se busca un libro mediante un motor de búsqueda primero se obtiene la descripción del libro que hay en el catálogo y a menudo el libro en sí está a sólo un clic de distancia. Cuando las cosas y la información sobre ellas son ambas digitales la oposición que planteamos no es tan evidente como cuando una o ambas están en un formato físico. Y aunque usamos las radiografías (en película o en formato digital) como ejemplos de cosas que podríamos organizar, cuando un médico estudia una radiografía, ¿no la está usando como si fuera información sobre el tema, es decir, el paciente de la radiografía? Y cuando el gerente de una empresa toma decisiones de marketing y precios a través del análisis de la información digital sobre qué y cuándo compra la gente, podemos pensar en esto como organizar a los clientes en categorías, o como una forma de organizar la información del cliente.</p><p id="e0f74418-9403-44f0-b937-d93e585c69e7" class="">Estas diferencias y relaciones entre “cosas físicas” y “cosas digitales” han sido discutidas y debatidas durante mucho tiempo por filósofos, lingüistas, psicólogos y otros. (Ver los recuadros: <em><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></em> y <em><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></em>)</p><p id="c4a47bb5-975a-4970-bdd8-056f08dc1e21" class="">Las distinciones entre la organización de cosas físicas, cosas digitales o información sobre cosas físicas o digitales son difíciles de describir porque muchas de las palabras que usamos están tan sobrecargadas de significados diferentes como la propia “información”. Por ejemplo, la perspectiva de la biblioteconomía suele incluir las propiedades de presentación o implementación en las definiciones de “documento”. Utiliza el término para referirse únicamente a las formas físicas tradicionales. En cambio, la perspectiva de la informática adopta una visión abstracta de “documento” para referirse a cualquier unidad de información autónoma. Separa el contenido de un documento de su presentación o contenedor.</p><h3 id="344cac3e-5ef2-4122-b0c5-47c339505f0c" class="">LA DIFERENCIA ENTRE DATOS E INFORMACIÓN</h3><figure id="5524801a-017c-4b49-ba66-750d69b7f723"><div class="source"><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/86e3f5b6-9a26-45f6-85b4-104cd681a918/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><blockquote id="0d01c0bc-1d62-401b-8ad4-a859b5807f47" class="">El lector astuto habrá notado que incluimos los datos de los sensores como “información sobre cosas físicas” y los feeds como “información sobre cosas digitales”. Muchos libros de texto en los campos de la ciencia de la información y la gestión del conocimiento distinguen los datos y la información de manera más precisa. Para ellos, los datos se encuentran en la parte inferior de una Jerarquía de la Información, Pirámide del Conocimiento, o Jerarquía DIKW en la que los datos se transforman en Información, que se transforma en Conocimiento, que luego se transforma en Sabiduría.<p id="86c148ca-9f7e-44da-9582-20d5f0a8e1c6" class="">En este ámbito, los datos son observaciones brutas o elementales sobre propiedades de los objetos, los eventos y su entorno. Los datos se convierten en información cuando son agregados, procesados, analizados, formateados y organizados para añadir significado y contexto de manera que puedan ser utilizados para responder a preguntas. Este proceso puede incluir operaciones de cálculo, inferencia o refinamiento de los datos. Por ejemplo, las mediciones de temperatura, precipitación y velocidad del viento son datos. Cuando se combinan y se resumen, un conjunto de datos se convierte en información estadística sobre el tiempo en un día concreto. Cuando se recogen durante un período de meses o años, estos conjuntos de datos se convierten en información sobre el clima del lugar donde se han recogido.</p><p id="9b780195-8a96-438e-85d8-6aab5352a562" class="">Este libro sobre “la disciplina de organizar” no hace esta fuerte separación entre los datos y la información como en la Jerarquía/Pirámide convencional. Es probable que las personas que lean este libro sean aspirantes o profesionales en ejercicio en sectores donde la información y los datos se tratan a menudo como sinónimos para referirse al contenido de una base de datos o una aplicación de gestión de datos. La diferencia entre datos e información puede ser útil en teoría, pero no en estos contextos concretos.</p><p id="d37e006b-27d5-47f3-9e0b-f74b960762a7" class="">La diferencia entre datos e información también se está desdibujando debido a la ampliación de la definición de los datos en el nuevo campo profesional de la ciencia de datos. De hecho, un popular texto introductorio elimina por completo la información de la Jerarquía/Pirámide con su título: <em>Descubriendo el conocimiento en los datos: una introducción a la minería de datos.</em></p></blockquote><figure id="ad7ee757-9203-487a-9cc4-192b4482e17d" class="image"><a href="https://www.notion.so../.gitbook/assets/Lista.jpg"><img style="width:296px" src="https://www.notion.so../.gitbook/assets/Lista.jpg"/></a></figure><p id="e0c59e0f-08bd-41b4-bd9a-f9d41c5b2adc" class="">Una variación similar de la definición ocurre con el concepto de “autor” o “creador”. Cuando decimos que “Herman Melville es el autor de Moby Dick” (Melville 1851) el significado de “autor” no depende de si tenemos una copia impresa o un e-book en mente, sino de lo que cuenta como autoría, que varía mucho entre las disciplinas académicas. Además, las diferentes normas para describir los recursos no coinciden en la precisión con la que identifican a la(s) persona(s) u organización(es) responsable(s) principal(es) de crear el contenido intelectual del recurso. Las personas que se toman en serio la descripción de la música critican con razón los servicios de <em>streaming</em> y las tiendas online que sólo tienen un campo de “artista” porque no distinguen al compositor, al director, a la orquesta y a otras personas con funciones distintas en la creación de la música.</p><p id="64e95c17-b6e0-4639-9bb4-a2218b5147a3" class="">Si permitimos que el concepto de información sea cualquier cosa que podamos estudiar, “cualquier cosa que informe”, el concepto se vuelve ilimitado. Nuestro objetivo en este libro es salvar el abismo intelectual que separa a las muchas disciplinas que comparten el objetivo de organizar, pero que difieren en lo que organizan. Esto requiere que nos enfoquemos en situaciones en las que la información existe debido a actos intencionales para crearla u organizarla. (Ver el recuadro sobre <em><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></em>).</p><p id="d48a70f3-2249-49da-b12a-20438ccdc6c4" class="">Muchos de los temas fundacionales de una disciplina sobre la organización se han presentado tradicionalmente desde la perspectiva del sector bibliotecario y se han enseñado como “biblioteconomía y ciencias de la información”. Estos incluyen la descripción bibliográfica, la clasificación, la denominación, el control de autoridades, la conservación y la normalización. En las últimas décadas estos cimientos se han reconstruido y ampliado desde los campos de la informática, las ciencias cognitivas y otros nuevos campos incluyendo cada vez más sectores privados y contextos no bibliográficos, medios multimedia y sociales, y nuevas aplicaciones y sistemas de servicios que manejan una gran cantidad de información, gracias a la computación móvil, omnipresente y científica. Las últimas adiciones a la Disciplina de Organizar provienen de la ciencia de datos y el aprendizaje automático e introducen consideraciones de velocidad y escala que surgen cuando se aprovecha la potencia computacional masiva y las nuevas técnicas estadísticas para organizar y actuar sobre la información.</p><p id="5f25907c-2e8b-46f5-87f6-f6f53d2f41c6" class="">Estos nuevos métodos y herramientas de la ciencia de datos y el aprendizaje automático nos permiten organizar más información, hacerlo más rápido y hacer predicciones basadas en lo que la gente ha buscado, comprado o dicho. Sin embargo, esta no es la primera vez que las nuevas ideas y tecnologías desafían la forma en que la gente se organiza e interactúa con los recursos. Hace 50 años, los catálogos online con capacidad de búsqueda cambiaron radicalmente la forma en que la gente utilizaba las bibliotecas. La web, inventada hace menos de treinta años para que los científicos pudieran compartir informes técnicos, es ahora una parte esencial de muchas actividades humanas. Es importante no ver las últimas novedades como algo que lo cambia todo, porque seguirán llegando cosas nuevas, y estos avances tecnológicos todavía dependen y complementan el trabajo de organización realizado por personas. La ciencia de datos no reemplazará a los organizadores humanos, al menos no más de lo que los han reemplazado otras ciencias. (Ver los recuadros <em><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></em> y <a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a><em><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></em>).</p><h3 id="e3c9866d-f7e4-4fc9-b0d8-21388aae2b03" class="">LA DISCIPLINA DE ORGANIZAR</h3><blockquote id="9ce9b72b-8f16-4e3a-8b8f-b8ee31b62249" class="">Una disciplina es un campo de estudio integrado en el que existe un acuerdo sobre las cuestiones y los problemas que deben estudiarse, cómo están interrelacionados, cómo deben estudiarse y cómo deben evaluarse las conclusiones o las teorías sobre tales cuestiones y problemas. Un marco es un conjunto de conceptos que proporciona la estructura básica para comprender un dominio, lo que aporta un vocabulario común para diferentes teorías explicativas.<p id="28c6bd54-11b2-4517-8b73-2d13ee6d4a48" class="">La organización, las actividades de organizar, es una cuestión fundamental en muchas disciplinas, sobre todo en la biblioteconomía y las ciencias de la información, la informática, el análisis de sistemas, las ciencias de la computación, el derecho, la economía y los negocios. Sin embargo, estas disciplinas sólo llegan a un acuerdo limitado en cuanto a la forma en que abordan y resuelven los problemas sobre organización. Por ejemplo, tradicionalmente la biblioteconomía y las ciencias de la información han estudiado la organización desde una perspectiva bibliográfica dentro del sector público, prestando gran atención a las necesidades de los usuarios en materia de acceso y conservación, y ofreciendo métodos y soluciones prescriptivos. En cambio, la informática y las ciencias de la computación tienden a estudiar la organización en el contexto de las aplicaciones comerciales que gestionan gran cantidad de información, centrándose en la eficiencia, la implementación y la arquitectura de estos sistemas. Las disciplinas de la gestión y la organización industrial se ocupan de la organización de los recursos humanos, materiales y de información en contextos constituidos por fuerzas comerciales, competitivas y reguladoras.</p><p id="fec2de8b-6c1f-49e8-b26b-5a56730489b7" class="">Este libro presenta un marco más abstracto para las cuestiones y los problemas de organización, y enfatiza los conceptos y los objetivos comunes de las disciplinas que las estudian. A su vez, sostiene que cada sistema de organización implica una colección de recursos y podemos tratar las cosas físicas, las digitales y la información sobre tales cosas como recursos. Cada sistema de organización implica una elección de propiedades o principios usados para describir y organizar los recursos, y formas de respaldar las interacciones con los recursos. Al comparar y contrastar cómo se desarrollan estas actividades en diferentes contextos y dominios, podemos identificar patrones de organización y ver que los sistemas de organización a menudo siguen un ciclo de vida común. Podemos crear una disciplina de la organización de manera disciplinada.</p></blockquote><p id="416aa741-8b1d-4940-8148-844e01a76848" class="">Por esto es necesario adoptar un punto de vista transdisciplinario que nos permita destacar lo que las diferentes disciplinas tienen en común y que se centre en cómo encajan entre sí, en lugar de en qué se distinguen. La selección de recursos, la organización, el diseño de interacción y el mantenimiento se estudian en todas las disciplinas, pero estos conceptos poseen nombres diferentes. Un vocabulario para discutir los retos organizativos comunes y las demandas que de otro modo podrían quedar oscurecidas por perspectivas disciplinarias estrechas, nos ayudará a comprender mejor los sistemas de organización existentes y a la vez sugerirá cómo inventar otros nuevos a través de diferentes elecciones de diseño.</p><h3 id="dfc1c975-b11d-4597-b5bb-6e601f6e31a9" class="">LA CIENCIA DE DATOS Y LA DISCIPLINA DE ORGANIZAR</h3><blockquote id="ac8fbee1-700f-49e6-9256-82e716a1ffe9" class="">Los avances en la potencia de los ordenadores y las técnicas estadísticas están haciendo posible identificar patrones en los datos y la extracción de información significativa a un nivel sin precedentes. Muchos libros y artículos sobre ciencia de datos, aprendizaje automático y análisis predictivo pronostican audazmente que estos campos emergentes cambiarán el mundo de forma radical. Estas afirmaciones son a la vez provocativas y prometedoras, pero en el fondo, la ciencia de datos trata sobre la forma en que los recursos se seleccionan, describen y organizan; conceptos con una gran tradición en la informática y la biblioteconomía. En lugar de organizar y describir los libros de una biblioteca o los productos de un almacén, un científico de datos podría organizar información sobre los libros o los productos en tablas de datos masivos, de forma que cada recurso aparece como una fila y sus propiedades descriptivas como las columnas. Después de organizar los libros o los productos en categorías, las técnicas de aprendizaje automático pueden clasificar los nuevos libros o productos mediante esas categorías, o tal vez descubrir nuevas categorías basadas en los comportamientos de acceso o compra. Así pues, aunque las técnicas de la ciencia de datos son nuevas, muchos de sus desafíos no lo son; los científicos de datos necesitan seleccionar los recursos con sabiduría y decidir la mejor manera de describirlos; necesitan comprender que la descripción y la categorización de los recursos pueden ser sesgadas; necesitan comprender los acuerdos que llevan al equilibrio entre personas y ordenadores; y, necesitan comprobar los descubrimientos que se logran con los algoritmos en experimentos controlados.<p id="d1edf015-4831-485a-8c2c-2116e61ae5e5" class="">Para dar sentido a las cuestiones sobre la ciencia de datos, hay que entender la diferencia entre “tipo” y “grado”. Hace cien años, la velocidad media a la que un coche podía circular por una autopista era de unos 65 kilómetros por hora. Los coches de hoy en día viajan el doble de rápido. Se trata solo de un cambio de grado. Sin embargo, un aumento de la velocidad a unos 17.500 kilómetros por hora logra una “velocidad orbital” que nos permite entrar en la órbita de la Tierra en el espacio, un viaje que es diferente en su tipo.</p><p id="354f34d7-4fdb-4ce9-afac-75b12f26e25d" class="">Pero, ¿cómo se aplica esto a las ciencias relacionadas con datos? Algunas ciencias de datos implican colecciones de datos que son “altas”, es decir, que contienen muchos millones o incluso miles de millones de registros, cada uno con un número relativamente pequeño de variables. Ser capaz de analizar los datos “altos” con una rapidez nunca antes vista es sobre todo un cambio de grado en comparación con las técnicas tradicionales de las bases de datos. No obstante, en el caso de las colecciones de datos que son “anchas”, en las que cada registro puede contener cientos o miles de variables, las técnicas de la ciencia de los datos podrían permitirnos ver patrones que no se podrían ver en absoluto, o que no se podrían ver de forma asequible y en cantidad suficiente. En este caso, la ciencia de datos podría estar produciendo cambios de tipo.</p></blockquote><figure id="d23761cb-f7a5-4e27-b25e-f34b52cd3466" class="image"><a href="https://www.notion.so../.gitbook/assets/Lupa.jpg"><img style="width:178px" src="https://www.notion.so../.gitbook/assets/Lupa.jpg"/></a></figure></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

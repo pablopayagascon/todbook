@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>1.6-el-concepto-de-principio-de-organizacion</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="623eca71-1e9c-4b5b-a188-24c5d5624a3c" class="page sans"><header><h1 class="page-title">1.6-el-concepto-de-principio-de-organizacion</h1><p class="page-description"></p></header><div class="page-body"><h1 id="c35fc5e0-c4c0-426b-bd40-2417158231e8" class="">1.6 El concepto de “Principio de Organización”</h1><p id="612bba71-f216-44b6-8f41-2cf712539f25" class="">La disposición de los recursos en un Sistema de Organización sigue o encarna uno o más principios de organización que permiten al sistema lograr sus propósitos. Los principios de organización son directrices para el diseño o la disposición de un conjunto de recursos que se expresan idealmente de una manera que no asuma ninguna implementación o realización concreta. Llamamos a esta filosofía de diseño .</p><figure id="a6e42b1d-f784-44e1-80cd-41017d11e083"><div class="source"><a href="1%206-el-concepto-de-principio-de-organizacion%20623eca711e9c4b5ba18824c5d5624a3c/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/314363fe-4083-4b87-9686-2cb5886730a6/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><figure id="e628b8d8-6cfb-4c29-801d-64511a2959c2"><div class="source"><a href="1%206-el-concepto-de-principio-de-organizacion%20623eca711e9c4b5ba18824c5d5624a3c/Universidad-de-Murcia-main.gitbookassetsAjustes%201.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/16022df6-7d03-4616-b9e5-896dbfe62e36/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure><p id="271d0435-1b82-4fb8-9661-e96ffd76c46c" class="">Cuando organizamos una estantería, la oficina en casa, la cocina, o los archivos MP3 de nuestro reproductor de música, los recursos en sí mismos pueden ser nuevos y modernos, pero muchos de los principios que rigen su organización son los que han influido en el diseño de los Sistemas de Organización durante cientos de años. Por ejemplo, organizamos muchas colecciones de recursos utilizando las propiedades que son más fáciles de percibir, o cuyos valores varían más entre los artículos de la colección, porque estos principios hacen que sea fácil localizar un recurso en concreto. También agrupamos los recursos que utilizamos con más asiduidad, hacemos que los recursos que utilizamos a menudo sean más accesibles que los que utilizamos con poca frecuencia y ponemos recursos raros o únicos donde podemos protegerlos. Los principios organizativos muy generales y abstractos a veces se denominan “diseño heurístico” (por ejemplo, “hacer que las cosas sean más fáciles de encontrar”). Los principios de organización más específicos y comúnmente utilizados incluyen el orden alfabético (ordenar los recursos según sus nombres) y el orden cronológico (ordenar los recursos según la fecha de su creación u otro evento importante en la vida del recurso). Algunos principios de organización clasifican los recursos en categorías predefinidas y otros principios de organización se basan en combinaciones novedosas de las propiedades de los recursos para crear nuevas categorías.</p><p id="d72954c6-a7a1-4005-9aa5-57b939c6d1f9" class="">Ya que la razón de escribir este libro es ampliar el estudio de la organización de la información más allá de sus raíces en la biblioteconomía y las ciencias de la información, en él se enfatizan los principios de organización que tienen un propósito funcional específico como la identificación, la selección, la recuperación o la preservación de los recursos. Sin embargo, durante miles de años la gente ha recopilado sistemáticamente cosas, información sobre esas cosas y observaciones de todo tipo, organizándolas en un esfuerzo por comprender cómo funciona su mundo; los babilonios crearon inventarios y mapas estelares; los egipcios rastrearon las inundaciones anuales del Nilo; y los mesoamericanos crearon calendarios astronómicos. La expresión “dar sentido” (sensemaking) se utiliza a menudo para describir este propósito genérico y menos específico de la organización como el acto de derivar significado de la experiencia haciendo encajar nuevos acontecimientos u observaciones en los que ya se conocen.</p><p id="9e8ea89b-fb29-4f90-83af-060125451ccb" class="">Organización de especias por tipo de cocina</p><figure id="fd754b5c-c57d-483b-b1f5-c0934fbba4e0" class="image"><a href="https://www.notion.so../.gitbook/assets/Especias.jpg"><img src="https://www.notion.so../.gitbook/assets/Especias.jpg"/></a></figure><p id="8d6a23b4-4d8f-443f-9ef1-c2e1d1263f24" class="">{% hint style=“info” %} #### Organización de especias por tipo de cocina</p><p id="49ab09b2-38ed-4b33-8884-0882fe42db4b" class="">Una forma de organización alternativa a la alfabética es organizar las especias según el tipo de cocina o perfiles de sabor, que se puede definir a partir de los ingredientes y especias que tienen a usarse conjuntamente. Patricia Glushko organiza sus especias en tres grupos: Cocina india (incluye guindilla, comino, cúrcuma, cilantro), Cocina mediterránea / Oriente media (incluye albahaca, orégano, paprika, tomillo, eneldo) y semillas. Cada grupo de especias está en un amplio contenedor diferente, lo que resulta cómodo al cocinar.</p><p id="398eda51-45f1-4b44-b46f-8b1ff01355d0" class="">(Foto R. Glushko) {% endhint %}</p><p id="bee61191-0efc-4f60-83c6-0053f57c51b0" class="">La expresión de principios organizativos de manera que se separen el diseño y la implementación se ajusta bien a la <strong>arquitectura de tres niveles</strong> que es familiar para arquitectos y diseñadores de software: interfaz de usuario (implementación de las interacciones), lógica de negocio (disposición intencional) y datos (recursos).</p><p id="f30db028-b9f6-4346-acb3-e90e1b8e18fe" class="">La separación lógica entre los principios de organización y su aplicación es fácil de ver con los recursos digitales. En una biblioteca digital, al usuario no le importa si los recursos se almacenan localmente o se recuperan a través de una red. La esencia de un Sistema de Organización de una biblioteca surge de los recursos que organiza y de las interacciones que permite con estos recursos. Por lo general, los usuarios se preocupan mucho por las interacciones que pueden realizar, como los tipos de búsqueda y clasificación que permite el catálogo de la biblioteca en línea. La forma en que se implementan los recursos y las interacciones no suele ser motivo de preocupación, a menos que sea claramente ineficiente.</p><p id="109eb7b3-abcf-430e-8df7-dd381d1dd88b" class="">La separación de los principios de organización y su aplicación es más difícil de reconocer en un Sistema de Organización que sólo contiene recursos físicos, como la cocina o el armario, en los que parece haber interacciones no mediadas con los recursos en lugar de acceder a ellos a través de algún tipo de interfaz de usuario o “capa de presentación” que apoya los principios especificados en el “capa intermedia” y materializados en la “capa de almacenamiento”. Como resultado, la gente puede fácilmente dejarse atrapar solo por las preocupaciones de la presentación. Con demasiada frecuencia perdemos el tiempo organizando por colores las carpetas de archivos y poniendo etiquetas en los contenedores de almacenamiento, cuando sería mejor pensar con más cuidado en la organización lógica de la carpeta y el contenido del contenedor. No sirve de nada utilizar colores y etiquetas para que la organización lógica se resalte con nitidez si no está previamente bien diseñada.</p><p id="cf55df53-57ea-4961-9443-277ecf1f5177" class="">Un lugar donde se pueden apreciar fácilmente estos diferentes niveles de recursos físicos es en la organización de las especias en una cocina. Diferentes cocinas pueden incorporar un principio de organización por orden alfabético para organizar una colección de especias, pero la ubicación exacta y la disposición de las especias en una cocina determinada depende de la configuración de los estantes y cajones, de si se utiliza un armario para especias o una bandeja giratoria, y de otras consideraciones relativas al nivel de almacenamiento. Análogamente, las especias podrían organizarse lógicamente por tipo de cocina, separando las especias indias de las mexicanas, pero este principio de organización no implica nada acerca de dónde podrán encontrarse en la cocina.</p><p id="39cad818-2744-45da-82ad-cac401781b5d" class="">La imagen 1.2. titulada “Niveles o capas de presentación, lógica y almacenamiento”, ilustra la separación de los niveles de presentación, lógica y almacenamiento para cuatro tipos diferentes de Sistemas de Organización de bibliotecas y para Google Books. Ninguno de ellos son iguales en todos los niveles o capas. Se puede observar cómo en el caso una biblioteca que utiliza robots de inventario para gestionar el almacenamiento de libros, esto no afecta al resto sus niveles superiores.</p><p id="658130e7-5ca0-4c41-953a-48a6a90a8539" class="">Imagen 1.2. Capas o niveles de Presentación, Lógico y de Almacenamiento.</p><figure id="9c278d97-3e18-45dd-bcfb-77b301b9b3b6" class="image"><a href="https://www.notion.so../.gitbook/assets/Capasoniveles.jpg"><img src="https://www.notion.so../.gitbook/assets/Capasoniveles.jpg"/></a></figure><p id="496711f8-ab91-4740-8f1b-a197e9ff0d3a" class="">{% hint style=“info” %} #### Imagen 1.2. Capas o niveles de Presentación, Lógico y de Almacenamiento.</p><p id="915f7225-0c9d-4422-90e0-242a25ae921a" class="">Es altamente recomendable que en el diseño e implementación de un Sistema de Organización se separe el almacenamiento de los recursos de la lógica de su ordenación y de los métodos para interactuar con ellos. Esta arquitectura a tres niveles es familiar para los diseñadores de Sistemas de Organización informáticos, pero también es útil al pensar con este enfoque incluso en Sistemas de Organización de recursos físicos. {% endhint %}</p><p id="9614b108-5854-40a7-be71-5a4b3970072a" class="">Dado que las cosas tangibles sólo pueden estar en un lugar a la vez, muchos Sistemas de Organización, como los de las bibliotecas modernas con catálogos en línea y colecciones físicas, resuelven esta limitación creando “proxies” o sustitutos digitales de sus recursos tangibles, o bien creando recursos digitales paralelos (por ejemplo, libros digitalizados). Las implicaciones de organizar, encontrar, utilizar y reutilizar recursos en cualquier Sistema de Organización reflejan directamente la mezcla de estas dos materializaciones de la información; de esta manera podemos pensar en la biblioteca moderna como un Sistema de Organización digital que se basa principalmente en recursos digitales para organizar una mezcla de recursos físicos y digitales.</p><p id="50711d6e-cd35-4d21-a3bf-df74ee3b9fb2" class="">El Sistema de Organización de una colección pequeña puede a veces utilizar sólo como principio de organización mínimo o por defecto la colocación, es decir, poner todos los recursos en el mismo lugar; por ejemplo, en el mismo contenedor, en el mismo estante o en el mismo buzón de correo electrónico. Si no cocinas mucho y sólo tienes un pequeño número de especias en tu cocina, no necesitas alfabetizarlas porque es fácil encontrar la que quieres.</p><h3 id="cbb17aed-941d-4f7d-b8c2-431ff11111d0" class="">LOS TRES NIVELES DE SISTEMAS DE ORGANIZACIÓN</h3><blockquote id="dadf4115-f159-4ad2-bb48-8d3b30d5c615" class="">Los arquitectos y los diseñadores de software están de acuerdo en que es conveniente construir aplicaciones que separen el almacenamiento de los datos, la lógica de negocio o las funciones que utilizan los datos, y la interfaz de usuario o los componentes de presentación a través de los cuales los usuarios u otras aplicaciones interactúan con los datos. Esta arquitectura modular permite que cada uno de los tres niveles se mejore, rediseñe o reimplemente de manera independiente para satisfacer requisitos cambiantes o para aprovechar nuevas tecnologías. Una distinción análoga es la que existe entre un algoritmo como descripción lógica de un método para resolver un problema de programación y su implementación en un lenguaje de programación particular como Java o Python.<p id="026e1a60-123b-402f-9a25-08d9c4db6e55" class="">Estas distinciones de arquitectura son también importantes para los bibliotecarios y especialistas en información. Nuestra nueva forma de ver los Sistemas de Organización enfatiza la importancia de identificar las interacciones deseadas con los recursos, determinando qué principios de organización pueden permitir ciertas interacciones, y luego decidir cómo almacenar y gestionar los recursos de acuerdo con esos principios. Aplicar el pensamiento arquitectónico a los Sistemas de Organización hace más fácil comparar y contrastar los existentes y diseñar otros nuevos. La separación de los principios de organización en el “nivel medio” de sus implicaciones en los niveles de “datos” y “presentación” permite a menudo aplicar el mismo Sistema de Organización lógico en diferentes entornos que soportan las mismas o equivalentes interacciones con los recursos. Por ejemplo, un nuevo requisito de mejora de la búsqueda en un catálogo de biblioteca en un móvil sólo afectaría al nivel de presentación.</p></blockquote><p id="795a236b-2374-46c3-a564-dd2fe65c5ee3" class="">Del principio de frecuencia de uso emerge implícitamente cierta forma de organización. En la cocina o en el armario de la ropa, los recursos que se utilizan con mayor frecuencia se sitúan al frente porque es el lugar más accesible. Sin embargo, a medida que una colección crece en tamaño, el tiempo empleado para organizar, localizar y recuperar un recurso en particular se vuelve más relevante. La colección debe organizarse explícitamente para que estas interacciones sean eficientes y la organización debe preservarse después de que la interacción tenga lugar; es decir, los recursos se devuelven al lugar donde fueron encontrados. En consecuencia, la mayoría de los Sistemas de Organización emplean principios de organización que aprovechan las propiedades de los recursos que se organizan (por ejemplo, el nombre, el color, la forma, la fecha de creación, la categoría semántica o biológica), y a menudo se utilizan simultáneamente múltiples propiedades. Por ejemplo, en la cocina se pueden ordenar las ollas y sartenes por tamaño y forma para poder agruparlas y almacenarlas de forma compacta, pero también se pueden organizar las cosas por estilo de cocina y separar los utensilios de la barbacoa del wok y otros instrumentos para hacer comida oriental.</p><p id="deca9b62-4177-4766-ba16-dce42b4a703b" class="">A diferencia de los recursos físicos, las propiedades organizativas más útiles para los recursos de información son las que reflejan su contenido y significado, y éstas no son directamente evidentes cuando se mira un libro, un documento o una colección de datos. Es necesario un esfuerzo intelectual significativo o un cálculo estadístico para revelar estas propiedades cuando se asignan términos de materia, se elabora un índice o se utilizan características como inputs en programas de aprendizaje automático y análisis de datos.</p><figure id="89564c97-1a23-4cef-b364-0c7ffae4fe3a" class="image"><a href="https://www.notion.so../.gitbook/assets/Perl.jpg"><img style="width:375px" src="https://www.notion.so../.gitbook/assets/Perl.jpg"/></a></figure><figure id="b056fb7d-1d28-409c-b48c-e27cee1eb613" class="image"><a href="https://www.notion.so../.gitbook/assets/organizacion.png"><img src="https://www.notion.so../.gitbook/assets/organizacion.png"/></a></figure><p id="e3b1547b-0565-4ab4-8c47-6d256da804df" class="">Separación de los principios de organización de su implementación</p><p id="5e7c7c21-4764-475a-ae4b-350ae3db4fa2" class="">{% hint style=“info” %} <strong>Separación de los principios de organización de su implementación</strong></p><p id="4b58259b-f23e-476b-8a8e-47eba0e1187f" class="">Tanto si las especias están organizadas alfabéticamente, por tipo de cocina, por temporada, por frecuencia de uso o por cualquier otro principio, esta decisión es lógicamente distinta de la disposición física de las especias. Hay muchos tipos de estantes para especias, armaritos, estanterías giratorias y otros dispositivos diseñados para ordenarlas.</p><p id="98b5dcfc-8841-47eb-be29-6b54ce55c842" class="">(Collage creado por R. Glushko de varios catálogos web.) {% endhint %}</p><p id="6a28419b-692c-4851-ab0d-aa86fd408e37" class="">Los Sistemas de Organización más eficaces para los recursos de información suelen basarse en las propiedades estadísticas que surgen del análisis de la colección como un todo. Por ejemplo, la pertinencia de los documentos para una consulta de búsqueda es mayor cuando contienen una frecuencia superior a la media de los términos de consulta comparados con otros documentos de la colección, o cuando están vinculados a documentos pertinentes. Asimismo, los algoritmos de clasificación de los mensajes de correo electrónico recalculan continuamente la probabilidad de que palabras como “beneficiario” o “Viagra” indiquen si un mensaje es “spam” o “no spam” en la colección de mensajes procesados.</p><hr id="6db383a4-fcc8-4c78-8a75-d7359cae3d66"/><ol type="1" id="da70fdf9-f80c-4d0b-9e3b-1f453c775bbd" class="numbered-list" start="1"><li>Puede consultarse el apartado §11.5.2. del capítulo 11 “The Organizing System Roadmap” del libro “TDO, core concepts edition”.<figure id="0bead4f5-cc87-4647-8abd-6504e49b3c2e"><div class="source"><a href="1%206-el-concepto-de-principio-de-organizacion%20623eca711e9c4b5ba18824c5d5624a3c/Universidad-de-Murcia-main.gitbookassetsAjustes%202.jpg">https://prod-files-secure.s3.us-west-2.amazonaws.com/508c3f7a-52c5-4164-94b0-681f38435b13/c1ef6ec9-54dc-4cf7-b118-8e14e90ec4e4/Universidad-de-Murcia-main.gitbookassetsAjustes.jpg</a></div></figure></li></ol></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

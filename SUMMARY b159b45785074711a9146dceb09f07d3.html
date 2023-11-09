@@ -1,0 +1,676 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>SUMMARY</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="b159b457-8507-4711-a914-6dceb09f07d3" class="page sans"><header><h1 class="page-title">SUMMARY</h1><p class="page-description"></p></header><div class="page-body"><h1 id="ff9dbc6d-bf25-41bb-9fad-233f2faccb77" class="">Table of contents</h1><ul id="8ab4f402-ecf2-4e6a-81ce-fd85f2a8c884" class="bulleted-list"><li style="list-style-type:disc"><a href="README%20605c0acb25464ee394074c7375bba903.html">README</a></li></ul><ul id="789b16e8-1636-4ec2-b874-6bd28c678493" class="bulleted-list"><li style="list-style-type:disc"><a href="README%209f06e2f475ee44c99eee00d9533ca703.html">README</a><ul id="776c193f-48ba-4ae1-b4ef-e9fcf3aa88aa" class="bulleted-list"><li style="list-style-type:circle"><a href="1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></li></ul><ul id="e835affc-86e3-402b-a016-62ebe0a31a10" class="bulleted-list"><li style="list-style-type:circle"><a href="1%202-el-concepto-de-sistema-de-organizacion%203f5d3768c9a74abb8f527d99bac5bd34.html">1.2-el-concepto-de-sistema-de-organizacion</a></li></ul><ul id="218260ac-1c72-485d-bf28-58ef1b494c78" class="bulleted-list"><li style="list-style-type:circle"><a href="1%203-el-concepto-de-recurso%206c12f8c7e18a41b7a2fdd6dbd46bf660.html">1.3-el-concepto-de-recurso</a></li></ul><ul id="cde3cecc-d971-4b97-973d-32071eac4a81" class="bulleted-list"><li style="list-style-type:circle"><a href="1%204-el-concepto-de-coleccion%2070cffbd3b17c4176bcb5a2c228149220.html">1.4-el-concepto-de-coleccion</a></li></ul><ul id="2f2cdc2b-a12b-40ed-8dba-ece2eb0487ec" class="bulleted-list"><li style="list-style-type:circle"><a href="1%205-el-concepto-de-la-ordenacion-intencionada%20126f54531f4f449ca49dd9861c824d95.html">1.5-el-concepto-de-la-ordenacion-intencionada</a></li></ul><ul id="c1669dbf-ff3e-43b5-8adb-c05cc3c1f695" class="bulleted-list"><li style="list-style-type:circle"><a href="1%206-el-concepto-de-principio-de-organizacion%20623eca711e9c4b5ba18824c5d5624a3c.html">1.6-el-concepto-de-principio-de-organizacion</a></li></ul><ul id="49e2cda7-8546-416f-a8f5-d51dd46a024e" class="bulleted-list"><li style="list-style-type:circle"><a href="1%207-el-concepto-de-agente%20349ddbc52cb14414bd87214b6bf6c7a4.html">1.7-el-concepto-de-agente</a></li></ul><ul id="5144f58f-2ecd-4d5b-a91b-15571b0a8e84" class="bulleted-list"><li style="list-style-type:circle"><a href="1%208-el-concepto-de-interacciones%20b15e83e4d30d4ac8b56b9e974fdefc95.html">1.8-el-concepto-de-interacciones</a></li></ul><ul id="40cad64b-4fea-464d-8406-0bf520c89b31" class="bulleted-list"><li style="list-style-type:circle"><a href="1%209-el-concepto-de-recurso-de-interaccion%207f39a630469641e8bf87b7d65e60c0a0.html">1.9-el-concepto-de-recurso-de-interaccion</a></li></ul></li></ul><ul id="960c0769-d506-4003-ad15-2cdbe6b9fa6c" class="bulleted-list"><li style="list-style-type:disc"><a href="README%20506313b110bf4d5dab9674ff945a47f9.html">README</a><ul id="9bd7a34d-71ba-4d4f-b029-fe9024bb94b2" class="bulleted-list"><li style="list-style-type:circle"><a href="README%20a73bff2dc93c4234877d363fbf64d209.html">README</a><ul id="4a1b1ad5-672c-43b3-a1ff-a4e48f898e45" class="bulleted-list"><li style="list-style-type:square"><a href="README%20ac2114607d584252bced1694acb324c9.html">README</a><ul id="e8c15e10-9877-4d6a-8b9a-55ee950ce9cd" class="bulleted-list"><li style="list-style-type:disc"><a href="2%201%201%201%20-los-recursos-compuestos-por-partes%204d1ca9b4df2b43ce97abaff54dbf7572.html">2.1.1.1.-los-recursos-compuestos-por-partes</a></li></ul><ul id="767b8953-5517-470f-bd24-06c6e09056bf" class="bulleted-list"><li style="list-style-type:disc"><a href="2%201%201%202-los-recursos-bibliograficos-los-componente%20f74f5c3fbfbd4f28a945621db656e2bc.html">2.1.1.2-los-recursos-bibliograficos-los-componentes-informativos-y-las-cosas-inteligentes-como-re</a></li></ul></li></ul><ul id="cdeda5bf-8227-449d-b78f-ece7c13ce9e1" class="bulleted-list"><li style="list-style-type:square"><a href="2%201%202%20-la-identidad-los-identificadores-y-los-nomb%2050b7123836fa45be967901826acd3105.html">2.1.2.-la-identidad-los-identificadores-y-los-nombres</a></li></ul></li></ul><ul id="ee73df51-6612-40e4-aea1-ec7da3538810" class="bulleted-list"><li style="list-style-type:circle"><a href="README%200854e304c5334882a024af463e194fe6.html">README</a><ul id="394fa0da-9f51-4b1b-9824-ec5ce4e70bdc" class="bulleted-list"><li style="list-style-type:square"><a href="2%202%201%20-el-dominio-de-los-recursos%2065224148a1eb42aeb7d47c5abd43ae26.html">2.2.1.-el-dominio-de-los-recursos</a></li></ul><ul id="db677126-fa08-46d2-b2a2-ae117b538ab7" class="bulleted-list"><li style="list-style-type:square"><a href="2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead.html">2.2.2.-el-formato-de-un-recurso</a></li></ul><ul id="5372ab33-1518-4573-b940-55e2ceab928a" class="bulleted-list"><li style="list-style-type:square"><a href="README%20be8fe00e87584fbeafb8564057fffa7e.html">README</a><ul id="16f5a9d4-486b-40c5-8f8b-b15f3efecb4c" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%203%201%20-recursos-pasivos-o-recursos-operandos%20e93f10f5c62d4dcf90c5839eb2d6b101.html">2.2.3.1.-recursos-pasivos-o-recursos-operandos</a></li></ul><ul id="1bb91f4e-2242-4700-bf60-7d0364cec201" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%203%202%20-recursos-activos-o-recursos-operantes%207508df37e1ef445e896d38f60d9e9b90.html">2.2.3.2.-recursos-activos-o-recursos-operantes</a></li></ul></li></ul><ul id="421c3e34-7075-4d85-862c-486331c29132" class="bulleted-list"><li style="list-style-type:square"><a href="2%202%204%20-el-foco-de-un-recurso%20221b4bc9cbbe447183faa6e5147f487e.html">2.2.4.-el-foco-de-un-recurso</a></li></ul><ul id="c4cfe150-3e98-4a86-9516-eca7a690228e" class="bulleted-list"><li style="list-style-type:square"><a href="README%205721fbd2b75445d3b787b5e6de7e7607.html">README</a><ul id="6f2d5628-4624-404c-b363-04a1bc3f7232" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%205%201%20-descripcion-fisica-de-un-recurso-primario%20d0669c1b2e1c4047ac7d0e12b67ee9e3.html">2.2.5.1.-descripcion-fisica-de-un-recurso-primario-fisico</a></li></ul><ul id="28d72aa7-33a3-4e5f-86a0-42a166277f30" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%205%202%20-descripcion-digital-de-un-recurso-primari%20b45be161e1f84690adea6b5105e6ac85.html">2.2.5.2.-descripcion-digital-de-un-recurso-primario-fisico</a></li></ul><ul id="00d2ef24-932d-405a-abbe-1e0025c775f4" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%205%203%20-descripcion-digital-de-un-recurso-primari%20a5b6803775d94d0bab333eeac8a1e56d.html">2.2.5.3.-descripcion-digital-de-un-recurso-primario-digital</a></li></ul><ul id="1185c72f-ca1b-40c8-bb1c-765b939f3fa0" class="bulleted-list"><li style="list-style-type:disc"><a href="2%202%205%204%20-descripcion-fisica-de-un-recurso-primario%2068dc35d7ac4a4deca717d82f1cf9ef90.html">2.2.5.4.-descripcion-fisica-de-un-recurso-primario-digital</a></li></ul></li></ul></li></ul><ul id="10467715-bc93-44ba-b388-c4ea4e52553d" class="bulleted-list"><li style="list-style-type:circle"><a href="README%20b096733dcad7429b9515137dde9da527.html">README</a><ul id="f82ebd3c-930f-4cee-8581-4b7803d9b8b0" class="bulleted-list"><li style="list-style-type:square"><a href="2%203%201%20-identidad-en-los-recursos-fisicos%20166d03c2692c486fa9668bfb685bb830.html">2.3.1.-identidad-en-los-recursos-fisicos</a></li></ul><ul id="902c6663-f99d-4143-9140-76627f58c220" class="bulleted-list"><li style="list-style-type:square"><a href="2%203%202%20-identidad-y-recursos-bibliograficos%20b68554d10a0e4ae59656f9f3bfbf39e6.html">2.3.2.-identidad-y-recursos-bibliograficos</a></li></ul><ul id="aef33bae-3d44-4161-ad26-2c2d19082f20" class="bulleted-list"><li style="list-style-type:square"><a href="2%203%203%20-identidad-y-componentes-informativos%209dc46f71320e4ccabcce7e30038a11a3.html">2.3.3.-identidad-y-componentes-informativos</a></li></ul><ul id="f4017653-f18c-47d0-b8df-3642fde89bc7" class="bulleted-list"><li style="list-style-type:square"><a href="2%203%204%20-identidad-y-recursos-activos%201a327b2fbd99471db88d54ca747945ad.html">2.3.4.-identidad-y-recursos-activos</a></li></ul></li></ul><ul id="04dd1cea-f408-4731-b5f4-73fecdc58c9a" class="bulleted-list"><li style="list-style-type:circle"><a href="README%20fd991cc38e6a4753bb9869559e50f800.html">README</a><ul id="dead9f41-ccfc-4eaf-a8e0-6760909af0a0" class="bulleted-list"><li style="list-style-type:square"><a href="2%204%201%20-que-es-un-nombre%20ec8634b3ba324bab8206514f2b542213.html">2.4.1.-que-es-un-nombre</a></li></ul><ul id="25453216-3f52-4bc6-a036-0ee979633dde" class="bulleted-list"><li style="list-style-type:square"><a href="README%20470c0a8290fd45f9af5e008616d80b51.html">README</a><ul id="df83ec08-f5fc-4c8f-9e6a-549dc7afb159" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%202%201%20-el-problema-del-vocabulario%209b26dc4c6b964d0fb037b7ae306d453a.html">2.4.2.1.-el-problema-del-vocabulario</a></li></ul><ul id="c30ca527-3b07-4693-a52e-6be359d398f4" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%202%202%20-homonimia-polisemia-y-los-falsos-amigos%200e4f9e1eb7154cea85c3c1d48a25557d.html">2.4.2.2.-homonimia-polisemia-y-los-falsos-amigos</a></li></ul><ul id="9e73e28e-249c-445b-b931-9a5f13c35ec0" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%202%203%20-nombres-con-asociaciones-no-deseadas%207a488ab635bc4986bcbd2ec2ee376a2e.html">2.4.2.3.-nombres-con-asociaciones-no-deseadas</a></li></ul><ul id="db99ef92-f4cf-46a4-902d-4f69be17ab10" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%202%204%20-nombres-que-asumen-atributos-no-permanent%2096660d906153486e8d35f73bc4b047cd.html">2.4.2.4.-nombres-que-asumen-atributos-no-permanentes</a></li></ul><ul id="91c51fff-2945-439c-bcc5-ace6c3e2d9c2" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%202%205%20-la-brecha-semantica%20b8a67e6afc9b45fa9996e2566a50c02e.html">2.4.2.5.-la-brecha-semantica</a></li></ul></li></ul><ul id="18a4c377-18ac-4b06-af6f-b39a9b751f96" class="bulleted-list"><li style="list-style-type:square"><a href="README%205843788b047c4ade8740f96a2a5451fb.html">README</a><ul id="dde1da2d-31ee-4f02-aea3-b80f74b494a4" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%203%201%20-produccion-de-nombres-informativos%20f3305abe1b0c4108a1a1e01cb3c8e67a.html">2.4.3.1.-produccion-de-nombres-informativos</a></li></ul><ul id="455555e1-9c04-4e89-854e-c552edfb5302" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%203%202%20-uso-de-vocabularios-controlados%20e8ee97b5f45546dc82f884203f1a8c8d.html">2.4.3.2.-uso-de-vocabularios-controlados</a></li></ul><ul id="a5defaa0-fd5d-401a-b4d6-c6c7b9dadaa0" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%203%203%20-permitir-los-alias%20333a687655f14b7d9786036b9e634cb1.html">2.4.3.3.-permitir-los-alias</a></li></ul><ul id="dcd11c90-f768-45dc-89ee-b3a0e1e45736" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%203%204%20-construccion-de-identificadores-unicos-o-%20cdd0f31ee4ef4f0aaaa75ad4ad2f3068.html">2.4.3.4.-construccion-de-identificadores-unicos-o-cualificados</a></li></ul><ul id="7896d99a-ab53-48e2-b9c4-11523cf0da9b" class="bulleted-list"><li style="list-style-type:disc"><a href="2%204%203%205%20-la-diferencia-entre-identificar-y-resolve%20aaec1b1212bb46958cfda06882f53ec2.html">2.4.3.5.-la-diferencia-entre-identificar-y-resolver</a></li></ul></li></ul></li></ul><ul id="e8cbc2b5-429a-48ae-8d0c-3fd2e5890e48" class="bulleted-list"><li style="list-style-type:circle"><a href="README%201bab181435f9483180b07ce49ce42161.html">README</a><ul id="f707b9d3-44f9-4bb8-a863-90aece9dc1f8" class="bulleted-list"><li style="list-style-type:square"><a href="README%2025d3682268fe4af4bcd754a02ead09be.html">README</a><ul id="2f9b18bf-1206-465c-a759-38c380737695" class="bulleted-list"><li style="list-style-type:disc"><a href="2%205%201%201%20-identificadores-persistentes%20ba45cd14dbff4e688acae3f28cea3c1f.html">2.5.1.1.-identificadores-persistentes</a></li></ul><ul id="06a4d85d-1447-491e-87c6-0088af3a54c4" class="bulleted-list"><li style="list-style-type:disc"><a href="2%205%201%202%20-recursos-permanentes-o-persistentes%20f6a0b68f1ea34d4bbdd193a984494bde.html">2.5.1.2.-recursos-permanentes-o-persistentes</a></li></ul></li></ul><ul id="d4d026c8-d9f9-42fb-a160-b0fe96bdddc0" class="bulleted-list"><li style="list-style-type:square"><a href="2%205%202%20-efectividad%208956709827f447a498374001ed7326b7.html">2.5.2.-efectividad</a></li></ul><ul id="7a42e2cf-be9c-49bd-8714-acc27aa37734" class="bulleted-list"><li style="list-style-type:square"><a href="2%205%203%20-autenticidad%2002a8febf7b4e4cd0a68737b8f52272d0.html">2.5.3.-autenticidad</a></li></ul><ul id="08b88edf-9144-4c5e-9bf2-797bdb0802de" class="bulleted-list"><li style="list-style-type:square"><a href="2%205%204%20-procedencia%20f6895e1544714c9186d7f628e1861dc2.html">2.5.4.-procedencia</a></li></ul></li></ul></li></ul><ul id="f3220695-48bd-47d9-a3ce-3b76220e91e1" class="bulleted-list"><li style="list-style-type:disc"><a href="capitulo-iii%20-descripcion-de-recursos-y-metadatos%20bce791f318fa48fab8e2e0f169b10393.html">capitulo-iii.-descripcion-de-recursos-y-metadatos</a></li></ul></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>

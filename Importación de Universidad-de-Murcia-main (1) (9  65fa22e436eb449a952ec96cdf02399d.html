@@ -1,0 +1,677 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Importación de Universidad-de-Murcia-main (1) (9 nov 2023)</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="65fa22e4-36eb-449a-952e-c96cdf02399d" class="page sans"><header><h1 class="page-title">Importación de Universidad-de-Murcia-main (1) (9 nov 2023)</h1><p class="page-description"></p></header><div class="page-body"><h3 id="c700a716-1742-44b6-9536-5510029fc8b2" class="">Pages</h3><figure id="605c0acb-2546-4ee3-9407-4c7375bba903" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20605c0acb25464ee394074c7375bba903.html">README</a></figure><figure id="b159b457-8507-4711-a914-6dceb09f07d3" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/SUMMARY%20b159b45785074711a9146dceb09f07d3.html">SUMMARY</a></figure><figure id="fdd0a1c4-b8b5-418d-84f2-43e029a2c0d3" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%201-organizar-una-disciplina-global%20fdd0a1c4b8b5418d84f243e029a2c0d3.html">1.1-organizar-una-disciplina-global</a></figure><figure id="3f5d3768-c9a7-4abb-8f52-7d99bac5bd34" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%202-el-concepto-de-sistema-de-organizacion%203f5d3768c9a74abb8f527d99bac5bd34.html">1.2-el-concepto-de-sistema-de-organizacion</a></figure><figure id="6c12f8c7-e18a-41b7-a2fd-d6dbd46bf660" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%203-el-concepto-de-recurso%206c12f8c7e18a41b7a2fdd6dbd46bf660.html">1.3-el-concepto-de-recurso</a></figure><figure id="70cffbd3-b17c-4176-bcb5-a2c228149220" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%204-el-concepto-de-coleccion%2070cffbd3b17c4176bcb5a2c228149220.html">1.4-el-concepto-de-coleccion</a></figure><figure id="126f5453-1f4f-449c-a49d-d9861c824d95" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%205-el-concepto-de-la-ordenacion-intencionada%20126f54531f4f449ca49dd9861c824d95.html">1.5-el-concepto-de-la-ordenacion-intencionada</a></figure><figure id="623eca71-1e9c-4b5b-a188-24c5d5624a3c" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%206-el-concepto-de-principio-de-organizacion%20623eca711e9c4b5ba18824c5d5624a3c.html">1.6-el-concepto-de-principio-de-organizacion</a></figure><figure id="349ddbc5-2cb1-4414-bd87-214b6bf6c7a4" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%207-el-concepto-de-agente%20349ddbc52cb14414bd87214b6bf6c7a4.html">1.7-el-concepto-de-agente</a></figure><figure id="b15e83e4-d30d-4ac8-b56b-9e974fdefc95" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%208-el-concepto-de-interacciones%20b15e83e4d30d4ac8b56b9e974fdefc95.html">1.8-el-concepto-de-interacciones</a></figure><figure id="7f39a630-4696-41e8-bf87-b7d65e60c0a0" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/1%209-el-concepto-de-recurso-de-interaccion%207f39a630469641e8bf87b7d65e60c0a0.html">1.9-el-concepto-de-recurso-de-interaccion</a></figure><figure id="9f06e2f4-75ee-44c9-9eee-00d9533ca703" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%209f06e2f475ee44c99eee00d9533ca703.html">README</a></figure><figure id="4d1ca9b4-df2b-43ce-97ab-aff54dbf7572" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%201%201%201%20-los-recursos-compuestos-por-partes%204d1ca9b4df2b43ce97abaff54dbf7572.html">2.1.1.1.-los-recursos-compuestos-por-partes</a></figure><figure id="f74f5c3f-bfbd-4f28-a945-621db656e2bc" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%201%201%202-los-recursos-bibliograficos-los-componente%20f74f5c3fbfbd4f28a945621db656e2bc.html">2.1.1.2-los-recursos-bibliograficos-los-componentes-informativos-y-las-cosas-inteligentes-como-re</a></figure><figure id="ac211460-7d58-4252-bced-1694acb324c9" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20ac2114607d584252bced1694acb324c9.html">README</a></figure><figure id="50b71238-36fa-45be-9679-01826acd3105" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%201%202%20-la-identidad-los-identificadores-y-los-nomb%2050b7123836fa45be967901826acd3105.html">2.1.2.-la-identidad-los-identificadores-y-los-nombres</a></figure><figure id="a73bff2d-c93c-4234-877d-363fbf64d209" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20a73bff2dc93c4234877d363fbf64d209.html">README</a></figure><figure id="65224148-a1eb-42ae-b7d4-7c5abd43ae26" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%201%20-el-dominio-de-los-recursos%2065224148a1eb42aeb7d47c5abd43ae26.html">2.2.1.-el-dominio-de-los-recursos</a></figure><figure id="90a01f01-f23e-4573-99c9-24188d5a6ead" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%202%20-el-formato-de-un-recurso%2090a01f01f23e457399c924188d5a6ead.html">2.2.2.-el-formato-de-un-recurso</a></figure><figure id="e93f10f5-c62d-4dcf-90c5-839eb2d6b101" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%203%201%20-recursos-pasivos-o-recursos-operandos%20e93f10f5c62d4dcf90c5839eb2d6b101.html">2.2.3.1.-recursos-pasivos-o-recursos-operandos</a></figure><figure id="7508df37-e1ef-445e-896d-38f60d9e9b90" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%203%202%20-recursos-activos-o-recursos-operantes%207508df37e1ef445e896d38f60d9e9b90.html">2.2.3.2.-recursos-activos-o-recursos-operantes</a></figure><figure id="be8fe00e-8758-4fbe-afb8-564057fffa7e" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20be8fe00e87584fbeafb8564057fffa7e.html">README</a></figure><figure id="221b4bc9-cbbe-4471-83fa-a6e5147f487e" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%204%20-el-foco-de-un-recurso%20221b4bc9cbbe447183faa6e5147f487e.html">2.2.4.-el-foco-de-un-recurso</a></figure><figure id="d0669c1b-2e1c-4047-ac7d-0e12b67ee9e3" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%205%201%20-descripcion-fisica-de-un-recurso-primario%20d0669c1b2e1c4047ac7d0e12b67ee9e3.html">2.2.5.1.-descripcion-fisica-de-un-recurso-primario-fisico</a></figure><figure id="b45be161-e1f8-4690-adea-6b5105e6ac85" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%205%202%20-descripcion-digital-de-un-recurso-primari%20b45be161e1f84690adea6b5105e6ac85.html">2.2.5.2.-descripcion-digital-de-un-recurso-primario-fisico</a></figure><figure id="a5b68037-75d9-4d0b-ab33-3eeac8a1e56d" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%205%203%20-descripcion-digital-de-un-recurso-primari%20a5b6803775d94d0bab333eeac8a1e56d.html">2.2.5.3.-descripcion-digital-de-un-recurso-primario-digital</a></figure><figure id="68dc35d7-ac4a-4dec-a717-d82f1cf9ef90" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%202%205%204%20-descripcion-fisica-de-un-recurso-primario%2068dc35d7ac4a4deca717d82f1cf9ef90.html">2.2.5.4.-descripcion-fisica-de-un-recurso-primario-digital</a></figure><figure id="5721fbd2-b754-45d3-b787-b5e6de7e7607" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%205721fbd2b75445d3b787b5e6de7e7607.html">README</a></figure><figure id="0854e304-c533-4882-a024-af463e194fe6" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%200854e304c5334882a024af463e194fe6.html">README</a></figure><figure id="166d03c2-692c-486f-a966-8bfb685bb830" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%203%201%20-identidad-en-los-recursos-fisicos%20166d03c2692c486fa9668bfb685bb830.html">2.3.1.-identidad-en-los-recursos-fisicos</a></figure><figure id="b68554d1-0a0e-4ae5-9656-f9f3bfbf39e6" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%203%202%20-identidad-y-recursos-bibliograficos%20b68554d10a0e4ae59656f9f3bfbf39e6.html">2.3.2.-identidad-y-recursos-bibliograficos</a></figure><figure id="9dc46f71-320e-4cca-bcce-7e30038a11a3" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%203%203%20-identidad-y-componentes-informativos%209dc46f71320e4ccabcce7e30038a11a3.html">2.3.3.-identidad-y-componentes-informativos</a></figure><figure id="1a327b2f-bd99-471d-b88d-54ca747945ad" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%203%204%20-identidad-y-recursos-activos%201a327b2fbd99471db88d54ca747945ad.html">2.3.4.-identidad-y-recursos-activos</a></figure><figure id="b096733d-cad7-429b-9515-137dde9da527" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20b096733dcad7429b9515137dde9da527.html">README</a></figure><figure id="ec8634b3-ba32-4bab-8206-514f2b542213" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%201%20-que-es-un-nombre%20ec8634b3ba324bab8206514f2b542213.html">2.4.1.-que-es-un-nombre</a></figure><figure id="9b26dc4c-6b96-4d0f-b037-b7ae306d453a" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%202%201%20-el-problema-del-vocabulario%209b26dc4c6b964d0fb037b7ae306d453a.html">2.4.2.1.-el-problema-del-vocabulario</a></figure><figure id="0e4f9e1e-b715-4cea-85c3-c1d48a25557d" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%202%202%20-homonimia-polisemia-y-los-falsos-amigos%200e4f9e1eb7154cea85c3c1d48a25557d.html">2.4.2.2.-homonimia-polisemia-y-los-falsos-amigos</a></figure><figure id="7a488ab6-35bc-4986-bcbd-2ec2ee376a2e" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%202%203%20-nombres-con-asociaciones-no-deseadas%207a488ab635bc4986bcbd2ec2ee376a2e.html">2.4.2.3.-nombres-con-asociaciones-no-deseadas</a></figure><figure id="96660d90-6153-486e-8d35-f73bc4b047cd" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%202%204%20-nombres-que-asumen-atributos-no-permanent%2096660d906153486e8d35f73bc4b047cd.html">2.4.2.4.-nombres-que-asumen-atributos-no-permanentes</a></figure><figure id="b8a67e6a-fc9b-45fa-9996-e2566a50c02e" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%202%205%20-la-brecha-semantica%20b8a67e6afc9b45fa9996e2566a50c02e.html">2.4.2.5.-la-brecha-semantica</a></figure><figure id="470c0a82-90fd-45f9-af5e-008616d80b51" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20470c0a8290fd45f9af5e008616d80b51.html">README</a></figure><figure id="f3305abe-1b0c-4108-a1a1-e01cb3c8e67a" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%203%201%20-produccion-de-nombres-informativos%20f3305abe1b0c4108a1a1e01cb3c8e67a.html">2.4.3.1.-produccion-de-nombres-informativos</a></figure><figure id="e8ee97b5-f455-46dc-82f8-84203f1a8c8d" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%203%202%20-uso-de-vocabularios-controlados%20e8ee97b5f45546dc82f884203f1a8c8d.html">2.4.3.2.-uso-de-vocabularios-controlados</a></figure><figure id="333a6876-55f1-4b7d-9786-036b9e634cb1" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%203%203%20-permitir-los-alias%20333a687655f14b7d9786036b9e634cb1.html">2.4.3.3.-permitir-los-alias</a></figure><figure id="cdd0f31e-e4ef-4f0a-aaa7-5ad4ad2f3068" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%203%204%20-construccion-de-identificadores-unicos-o-%20cdd0f31ee4ef4f0aaaa75ad4ad2f3068.html">2.4.3.4.-construccion-de-identificadores-unicos-o-cualificados</a></figure><figure id="aaec1b12-12bb-4695-8cfd-a06882f53ec2" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%204%203%205%20-la-diferencia-entre-identificar-y-resolve%20aaec1b1212bb46958cfda06882f53ec2.html">2.4.3.5.-la-diferencia-entre-identificar-y-resolver</a></figure><figure id="5843788b-047c-4ade-8740-f96a2a5451fb" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%205843788b047c4ade8740f96a2a5451fb.html">README</a></figure><figure id="fd991cc3-8e6a-4753-bb98-69559e50f800" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20fd991cc38e6a4753bb9869559e50f800.html">README</a></figure><figure id="ba45cd14-dbff-4e68-8aca-e3f28cea3c1f" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%205%201%201%20-identificadores-persistentes%20ba45cd14dbff4e688acae3f28cea3c1f.html">2.5.1.1.-identificadores-persistentes</a></figure><figure id="f6a0b68f-1ea3-4d4b-bdd1-93a984494bde" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%205%201%202%20-recursos-permanentes-o-persistentes%20f6a0b68f1ea34d4bbdd193a984494bde.html">2.5.1.2.-recursos-permanentes-o-persistentes</a></figure><figure id="25d36822-68fe-4af4-bcd7-54a02ead09be" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%2025d3682268fe4af4bcd754a02ead09be.html">README</a></figure><figure id="89567098-27f4-47a4-9837-4001ed7326b7" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%205%202%20-efectividad%208956709827f447a498374001ed7326b7.html">2.5.2.-efectividad</a></figure><figure id="02a8febf-7b4e-4cd0-a687-37b8f52272d0" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%205%203%20-autenticidad%2002a8febf7b4e4cd0a68737b8f52272d0.html">2.5.3.-autenticidad</a></figure><figure id="f6895e15-4471-4c91-86d7-f628e1861dc2" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/2%205%204%20-procedencia%20f6895e1544714c9186d7f628e1861dc2.html">2.5.4.-procedencia</a></figure><figure id="1bab1814-35f9-4831-80b0-7ce49ce42161" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%201bab181435f9483180b07ce49ce42161.html">README</a></figure><figure id="506313b1-10bf-4d5d-ab96-74ff945a47f9" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/README%20506313b110bf4d5dab9674ff945a47f9.html">README</a></figure><figure id="bce791f3-18fa-48fa-b8e2-e0f169b10393" class="link-to-page"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/capitulo-iii%20-descripcion-de-recursos-y-metadatos%20bce791f318fa48fab8e2e0f169b10393.html">capitulo-iii.-descripcion-de-recursos-y-metadatos</a></figure><h3 id="2dd66d9f-748c-432d-9a50-25c819756f2f" class="">Attachments</h3><figure id="dd199d56-9074-4b13-b75c-33a2d271e386"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsCapasoniveles.jpg">Capasoniveles.jpg</a></div></figure><figure id="beb57b16-787a-48e6-8fe9-c5046f96d335"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsEspecias.jpg">Especias.jpg</a></div></figure><figure id="553855f3-ba6d-480b-9d4c-37c17f6a2156"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsImagen1_(1).svg">Imagen1 (1).svg</a></div></figure><figure id="36947ce4-30cf-4e22-86f9-a4dd985d80ae"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsImagen1.svg">Imagen1.svg</a></div></figure><figure id="2cec65b0-1775-44fd-b31c-d66739384f03"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsImagen2.png">Imagen2.png</a></div></figure><figure id="b8178674-c2f4-4ca8-86e4-4763e95cd1a0"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsImagen3.jpg">Imagen3.jpg</a></div></figure><figure id="a54f4371-fda3-4a95-9e29-14e6be3da12d"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsImagen4.jpg">Imagen4.jpg</a></div></figure><figure id="09da4054-2018-4f01-89ec-0b2438ac6530"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsLista.jpg">Lista.jpg</a></div></figure><figure id="bb54cb9d-fc67-4591-9e47-64d639e4fe7d"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsLupa.jpg">Lupa.jpg</a></div></figure><figure id="3fd757fe-ea7d-464d-937c-19599d4af82d"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsPCcafe.jpg">PCcafe.jpg</a></div></figure><figure id="496298e5-590b-4f6f-83e6-879d9c5b71e1"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsPerl.jpg">Perl.jpg</a></div></figure><figure id="fc634b2e-ccf9-4266-a980-25c24802ca84"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsajedrez.jpg">ajedrez.jpg</a></div></figure><figure id="7bdbbb08-f472-488d-acab-6686a2a9d68a"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsbusqueda.jpg">busqueda.jpg</a></div></figure><figure id="83a57de9-04ef-49cb-9a86-ee1d571e7f7b"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetscapturas_(1).jpg">capturas (1).jpg</a></div></figure><figure id="ce383ae6-9517-4211-8104-fc9db948870a"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetscapturas.jpg">capturas.jpg</a></div></figure><figure id="8bb77f34-6e87-488a-ab46-cb143717cce4"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsenviar.jpg">enviar.jpg</a></div></figure><figure id="8e8791a0-00e8-4e7f-a186-4d0db32798cf"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsiconoRecurso_1logo_(1).svg">iconoRecurso 1logo (1).svg</a></div></figure><figure id="07ee5135-59c6-42a5-91fc-e0559b2b7a10"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsiconoRecurso_1logo.svg">iconoRecurso 1logo.svg</a></div></figure><figure id="094ca8f7-110f-4e17-8416-4a9971831416"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsiconoRecurso_1puntos.svg">iconoRecurso 1puntos.svg</a></div></figure><figure id="98683b64-62b1-407e-b5d4-374b96c872f9"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsiconoRecurso_3puntos.jpg">iconoRecurso 3puntos.jpg</a></div></figure><figure id="9aa8d699-1a31-41b2-8416-d9370a5af21a"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsiconoRecurso-2puntos.jpg">iconoRecurso-2puntos.jpg</a></div></figure><figure id="c0f687e4-cb32-4d7b-b546-f368a3f4c50a"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsifthen.jpg">ifthen.jpg</a></div></figure><figure id="9b492014-348c-447e-93d6-b9e9072178aa"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsmoby_dick.jpg">moby dick.jpg</a></div></figure><figure id="9cd10a84-c749-46ce-8292-0b0b44ea5ad7"><div class="source"><a href="Importacio%CC%81n%20de%20Universidad-de-Murcia-main%20(1)%20(9%20%2065fa22e436eb449a952ec96cdf02399d/Universidad-de-Murcia-main.gitbookassetsorganizacion.png">organizacion.png</a></div></figure><p id="84fdca8a-ebb1-4152-9e20-0fa1a0d13cb5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
